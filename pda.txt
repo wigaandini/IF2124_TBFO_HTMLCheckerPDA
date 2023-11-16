@@ -1,0 +1,31 @@
+STATE INPUT STACK-BOTTOM NEXT-STATE STACK-NOW
+
+START html Z0 HTML htmlZ0
+HTML id html HTML html
+HTML class html HTML html
+HTML style html HTML html
+HTML head html HEAD headhtml
+XBODY /html html FINAL e {kalo misalnya udah ditutup htmlnya, udah pasti sisanya e}
+
+HEAD id head HEAD head
+HEAD class head HEAD head
+HEAD style head HEAD head
+HEAD title head TITLE titlehead
+TITLE /title title XTITLE e
+XTITLE /head head XHEAD e
+HEAD script head SCRIPT scripthead
+SCRIPT /script script XSCRIPT e
+XSCRIPT /head head XHEAD e
+SCRIPT src= script SRCSCRIPT srcscript
+{kalo ketemu > lgsg stop? => ke state XSCRIPT}
+XSCRIPT /head head XHEAD e
+HEAD link head LINK linkhead
+LINK rel link LINK rellink
+LINK href rel LINK hrefrel
+{kalo ketemu > lgsg stop? => ke state XHEAD}
+HEAD /head head XHEAD e
+XHEAD body html BODY bodyhtml
+
+BODY id body BODY body
+BODY class body BODY body
+BODY /body body XBODY e

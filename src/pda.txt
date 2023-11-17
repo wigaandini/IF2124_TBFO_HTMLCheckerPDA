@@ -17,12 +17,16 @@ HEAD script head SCRIPT scripthead
 SCRIPT /script script XSCRIPT e
 XSCRIPT /head head XHEAD e
 SCRIPT src= script SRCSCRIPT src=script
+
 {kalo ketemu > lgsg stop? => ke state XSCRIPT}
+
 XSCRIPT /head head XHEAD e
 HEAD link head LINK linkhead
 LINK rel= link LINK rel=link
 LINK href rel= LINK hrefrel=
+
 {kalo ketemu > lgsg stop? => ke state XHEAD}
+
 HEAD /head head XHEAD e
 XHEAD body html BODY bodyhtml
 
@@ -241,12 +245,15 @@ BODY form body FORM formbody
 FORM id form FORM form
 FORM class form FORM form
 FORM style form FORM form
-FORM action= form FORM_ACTION action
-FORM_ACTION action form FORM_ACTION action
-FORM /form form XFORM e
-FORM method= form FORM_METHOD method
-FORM_METHOD method form FORM_METHOD method
-{nanti tambahin method get sm post}
+
+FORM action= form FORMACTION action=form
+FORM method=post form FORMMETHODPOST method=postform
+FORM method=get form FORMMETHODGET method=getform
+
+FORMACTION /form form XFORM e
+FORMMETHODPOST /form form XFORM e
+FORMMETHODGET /form form XFORM e
+XFORM /body body XBODY e
 
 
 
@@ -255,10 +262,18 @@ BODY input body INPUT inputbody
 INPUT id input INPUT input
 INPUT class input INPUT input
 INPUT style input INPUT input
-INPUT type= input INPUT_TYPE type
-INPUT_TYPE type input INPUT_TYPE type
-INPUT /input input XINPUT e
-{tambahin type test, password, email, number, checkbox}
+
+INPUT type=text input INPUTTYPETEXT type=textinput
+INPUT type=password input INPUTTYPEPASSWORD type=passwordinput
+INPUT type=email input INPUTTYPEEMAIL type=emailinput
+INPUT type=number input INPUTTYPENUMBER type=numberinput
+INPUT type=checkbox input INPUTTYPECHECKBOX type=checkboxinput
+INPUTTYPETEXT /input input XINPUT e
+INPUTTYPEPASSWORD /input input XINPUT e
+INPUTTYPEEMAIL /input input XINPUT e
+INPUTTYPENUMBER /input input XINPUT e
+INPUTTYPECHECKBOX /input input XINPUT e
+XINPUT /body body XBODY e
 
 
 

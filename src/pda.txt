@@ -191,11 +191,15 @@ DIV b div BOLD divbold
 DIV div div DIV divdiv
 DIV /div div DIV div
 
+
+
 // IMG
 BODY img body IMG imgbody
 IMG src= img IMGSRC src=img
 IMGSRC /img img XIMG e
 XIMG /body body XBODY e
+
+
 
 // LINK
 HEAD link head LINK linkhead
@@ -204,19 +208,64 @@ LINK href rel= LINK hrefrel=
 LINK /link link XLINK e
 XLINK /head head XHEAD e
 
+
+
 // A
 BODY a body A abody
 A href= a AHREF href=a
 AHREF /a a XA e
 XA /body body XBODY e
 
-// BUTTON (with TYPE)
-BODY button body BUTTON buttonbody
-BUTTON type= button BUTTONTYPE type=button
-BUTTON type=submit button BUTTONTYPESUBMIT type=submitbutton
-BUTTON type=reset button BUTTONTYPERESET type=resetbutton
 
-BUTTONTYPE /button button XBUTTON e
-BUTTONTYPESUBMIT /button button XBUTTON e
-BUTTONTYPERESET /button button XBUTTON e
-XBUTTON /body body XBODY e
+// BUTTON
+BODY button body BUTTON buttonbody
+BUTTON id button BUTTON button
+BUTTON class button BUTTON button
+BUTTON style button BUTTON button
+BUTTON /button button XBUTTON e
+{nanti tambahin type apa aja}
+
+
+
+// FORM
+BODY form body FORM formbody
+FORM id form FORM form
+FORM class form FORM form
+FORM style form FORM form
+FORM action= form FORM_ACTION action
+FORM_ACTION action form FORM_ACTION action
+FORM /form form XFORM e
+FORM method= form FORM_METHOD method
+FORM_METHOD method form FORM_METHOD method
+{nanti tambahin method get sm post}
+
+
+
+// INPUT
+BODY input body INPUT inputbody
+INPUT id input INPUT input
+INPUT class input INPUT input
+INPUT style input INPUT input
+INPUT type= input INPUT_TYPE type
+INPUT_TYPE type input INPUT_TYPE type
+INPUT /input input XINPUT e
+{tambahin type test, password, email, number, checkbox}
+
+
+
+// TABLE
+BODY table body TABLE tablebody
+TABLE id table TABLE table
+TABLE class table TABLE table
+TABLE style table TABLE table
+TABLE /table table XTABLE e
+
+// TABLE ROW
+TABLE tr table TR trtable
+TR /tr tr XTR e
+
+// TABLE DATA
+TR td tr TD tdtr
+TR th tr TH thtr
+TD /td td XTD e
+TH /th th XTH e

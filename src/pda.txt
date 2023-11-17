@@ -31,7 +31,7 @@ BODY class body BODY body
 BODY style body BODY body
 BODY /body body XBODY e
 
-// handling header
+// HANDLING HEADER
 BODY h1 body H1 h1body
 H1 /h1 h1 XH1 e
 BODY h2 body H2 h2body
@@ -45,9 +45,9 @@ H5 /h5 h5 XH5 e
 BODY h6 body H6 h6body
 H6 /h6 h6 XH6 e
 
-// handling paragraph
 
-{tanpa bold}
+// HANDLING PARAGRAPH
+{tanpa bold, em, strong, small}
 BODY p body P pbody
 P /p p XP e
 
@@ -56,10 +56,113 @@ P b p BOLD bp
 BOLD /b b XBOLD e
 XBOLD /p p XP e
 
+{with strong}
+P strong p STRONG strongp
+STRONG /strong strong XSTRONG e
+XSTRONG /p p XP e
+
+{with em}
+P em p ITALIC emp
+ITALIC /em em XITALIC e
+XITALIC /p p XP e
+
+{with small}
+P small p SMALL smallp
+SMALL /small SMALL XSMALL e
+XSMALL /p p XP e
+
 {br}
 {kasus p (tanpa bold) di breakline}
 P br p BREAK brp
 BREAK /br br XBREAK e
 
+
+
+// BOLD (IN PARAGRAPH)
 {break di dalam bold}
 BOLD br b BREAK brb
+
+{em di dalam bold}
+BOLD em b ITALIC emb
+
+{strong di dalam bold}
+BOLD strong b STRONG strongb
+
+{small di dalam bold}
+BOLD small b SMALL smallb
+
+
+
+// ABBR
+{abbr}
+BODY abbr body ABBR abbrbody
+ABBR /abbr abbr XABBR e
+XABBR /body body XBODY e
+
+
+
+// EM (IN PARAGRAPH)
+{break di dalam em}
+ITALIC br em BREAK brem
+
+{bold di dalam em}
+ITALIC b em BOLD bem
+
+{strong di dalam em}
+ITALIC strong em STRONG strongem
+
+{small di dalam em}
+ITALIC small em SMALL smallem
+
+
+
+// STRONG (IN PARAGRAPH)
+{break di dalam strong}
+STRONG br strong BREAK brstrong
+
+{bold di dalam strong}
+STRONG b strong BOLD bstrong
+
+{em di dalam strong}
+STRONG em strong ITALIC emstrong
+
+{small di dalam strong}
+STRONG small strong SMALL smallstrong
+
+
+
+// SMALL (IN PARAGRAPH)
+{break di dalam small}
+SMALL br small BREAK brsmall
+
+{bold di dalam small}
+SMALL b small BOLD bsmall
+
+{em di dalam small}
+SMALL em small ITALIC emsmall
+
+{strong di dalam small}
+SMALL strong small STRONG strongsmall
+
+
+
+// HR 
+BODY hr body BODY body 
+H1 hr h1 H1 h1
+H2 hr h2 H2 h2
+H3 hr h3 H3 h3
+H4 hr h4 H4 h4
+H5 hr h5 H5 h5
+H6 hr h6 H6 h6
+XH1 hr e XH1 e
+XH2 hr e XH2 e
+XH3 hr e XH3 e
+XH4 hr e XH4 e
+XH5 hr e XH5 e
+XH6 hr e XH6 e
+P hr p P p 
+XP hr e P e
+
+
+
+// DIV

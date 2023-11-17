@@ -166,3 +166,34 @@ XP hr e P e
 
 
 // DIV
+BODY div body DIV divbody
+DIV id div DIV div
+DIV class div DIV div
+DIV style div DIV div
+DIV /div div XDIV e
+
+DIV p div P divp
+DIV h1 div H1 divh1
+DIV h2 div H2 divh2
+DIV h3 div H3 divh3
+DIV h4 div H4 divh4
+DIV h5 div H5 divh5
+DIV h6 div H6 divh6
+DIV hr div HR divhr
+DIV abbr div ABBR divabbr
+DIV br div BREAK divbr
+DIV strong div STRONG divstrong
+DIV em div ITALIC divitalic
+DIV small div SMALL divsmall
+DIV b div BOLD divbold
+
+{kasus div nested}
+DIV div div DIV divdiv
+DIV /div div DIV div
+
+// IMG
+BODY img body IMG imgbody
+IMG src= img IMGSRC src=img
+{handling attributes, go to state XIMG if > is found}
+IMGSRC /img img XIMG e
+XIMG /body body XBODY e

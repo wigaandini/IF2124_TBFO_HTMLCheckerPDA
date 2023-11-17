@@ -203,3 +203,20 @@ LINK rel= link LINK rel=link
 LINK href rel= LINK hrefrel=
 LINK /link link XLINK e
 XLINK /head head XHEAD e
+
+// A
+BODY a body A abody
+A href= a AHREF href=a
+AHREF /a a XA e
+XA /body body XBODY e
+
+// BUTTON (with TYPE)
+BODY button body BUTTON buttonbody
+BUTTON type= button BUTTONTYPE type=button
+BUTTON type=submit button BUTTONTYPESUBMIT type=submitbutton
+BUTTON type=reset button BUTTONTYPERESET type=resetbutton
+
+BUTTONTYPE /button button XBUTTON e
+BUTTONTYPESUBMIT /button button XBUTTON e
+BUTTONTYPERESET /button button XBUTTON e
+XBUTTON /body body XBODY e

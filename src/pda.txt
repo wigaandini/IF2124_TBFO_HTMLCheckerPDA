@@ -191,9 +191,10 @@ DIV b div BOLD divbold
 DIV div div DIV divdiv
 DIV /div div DIV div
 
+
+
 // IMG
 BODY img body IMG imgbody
 IMG src= img IMGSRC src=img
-{handling attributes, go to state XIMG if > is found}
 IMGSRC /img img XIMG e
 XIMG /body body XBODY e

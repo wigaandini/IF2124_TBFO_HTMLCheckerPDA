@@ -198,3 +198,10 @@ BODY img body IMG imgbody
 IMG src= img IMGSRC src=img
 IMGSRC /img img XIMG e
 XIMG /body body XBODY e
+
+// LINK
+HEAD link head LINK linkhead
+LINK rel= link LINK rel=link
+LINK href rel= LINK hrefrel=
+LINK /link link XLINK e
+XLINK /head head XHEAD e

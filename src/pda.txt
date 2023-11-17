@@ -217,13 +217,22 @@ AHREF /a a XA e
 XA /body body XBODY e
 
 
+
 // BUTTON
 BODY button body BUTTON buttonbody
 BUTTON id button BUTTON button
 BUTTON class button BUTTON button
 BUTTON style button BUTTON button
 BUTTON /button button XBUTTON e
-{nanti tambahin type apa aja}
+
+BUTTON type= button BUTTONTYPE type=button
+BUTTON type=submit button BUTTONTYPESUBMIT type=submitbutton
+BUTTON type=reset button BUTTONTYPERESET type=resetbutton
+
+BUTTONTYPE /button button XBUTTON e
+BUTTONTYPESUBMIT /button button XBUTTON e
+BUTTONTYPERESET /button button XBUTTON e
+XBUTTON /body body XBODY e
 
 
 

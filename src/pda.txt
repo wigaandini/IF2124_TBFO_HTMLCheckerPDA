@@ -260,6 +260,39 @@ H6_STYLE_CLASS_ID /h6 e XH6 e
 BODY p body P pbody
 P /p p XP e
 
+P id= p P_ID ep
+P_ID /p e XP e
+P_ID class= e P_ID_CLASS ep
+P_ID_CLASS /p e XP e
+P_ID style= e P_ID_STYLE ep
+P_ID_STYLE /p e XP e
+P_ID_CLASS style= e P_ID_CLASS_STYLE ep
+P_ID_CLASS_STYLE /p e XP e
+P_ID_STYLE class= e P_ID_STYLE_CLASS ep
+P_ID_STYLE_CLASS /p e XP e
+
+P class= p P_CLASS ep
+P_CLASS /p e XP e 
+P_CLASS id= e P_CLASS_ID ep
+P_CLASS_ID /p e XP e
+P_CLASS style= e P_CLASS_STYLE ep
+P_CLASS_STYLE /p e XP e
+P_CLASS_ID style= e P_CLASS_ID_STYLE ep
+P_CLASS_ID_STYLE /p e XP e
+P_CLASS_STYLE id= e P_CLASS_STYLE_ID ep
+P_CLASS_STYLE_ID /p e XP e
+
+P style= p P_STYLE ep
+P_STYLE /p e XP e
+P_STYLE id= e P_STYLE_ID ep
+P_STYLE_ID /p e XP e
+P_STYLE class= e P_STYLE_CLASS ep
+P_STYLE_CLASS /p e XP e
+P_STYLE_ID class= e P_STYLE_ID_CLASS ep
+P_STYLE_ID_CLASS /p e XP e
+P_STYLE_CLASS id= e P_STYLE_CLASS_ID ep
+P_STYLE_CLASS_ID /p e XP e
+
 {with bold}
 P b p BOLD bp
 BOLD /b b XBOLD e

@@ -1,11 +1,12 @@
 STATE INPUT STACK-BOTTOM NEXT-STATE STACK-NOW
 
+{antara mau bikin state REJECT atau dia tetap di state dia doang?}
 START html Z0 HTML htmlZ0
 HTML id html HTML html
 HTML class html HTML html
 HTML style html HTML html
 HTML head html HEAD headhtml
-XBODY /html html FINAL e {kalo misalnya udah ditutup htmlnya, udah pasti sisanya e}
+XBODY /html html FINAL e {kalo misalnya udah ditutup htmlnya, udah pasti sisanya e, di pop soalnya}
 
 HEAD id head HEAD head
 HEAD class head HEAD head
@@ -38,16 +39,220 @@ BODY /body body XBODY e
 // HANDLING HEADER
 BODY h1 body H1 h1body
 H1 /h1 h1 XH1 e
+
+H1 id= h1 H1_ID eh1
+H1_ID /h1 e XH1 e
+H1_ID class= e H1_ID_CLASS eh1
+H1_ID_CLASS /h1 e XH1 e
+H1_ID style= e H1_ID_STYLE eh1
+H1_ID_STYLE /h1 e XH1 e
+H1_ID_CLASS style= e H1_ID_CLASS_STYLE eh1
+H1_ID_CLASS_STYLE /h1 e XH1 e
+H1_ID_STYLE class= e H1_ID_STYLE_CLASS eh1
+H1_ID_STYLE_CLASS /h1 e XH1 e
+
+H1 class= h1 H1_CLASS eh1
+H1_CLASS /h1 e XH1 e 
+H1_CLASS id= e H1_CLASS_ID eh1
+H1_CLASS_ID /h1 e XH1 e
+H1_CLASS style= e H1_CLASS_STYLE eh1
+H1_CLASS_STYLE /h1 e XH1 e
+H1_CLASS_ID style= e H1_CLASS_ID_STYLE eh1
+H1_CLASS_ID_STYLE /h1 e XH1 e
+H1_CLASS_STYLE id= e H1_CLASS_STYLE_ID eh1
+H1_CLASS_STYLE_ID /h1 e XH1 e
+
+H1 style= h1 H1_STYLE eh1
+H1_STYLE /h1 e XH1 e
+H1_STYLE id= e H1_STYLE_ID eh1
+H1_STYLE_ID /h1 e XH1 e
+H1_STYLE class= e H1_STYLE_CLASS eh1
+H1_STYLE_CLASS /h1 e XH1 e
+H1_STYLE_ID class= e H1_STYLE_ID_CLASS eh1
+H1_STYLE_ID_CLASS /h1 e XH1 e
+H1_STYLE_CLASS id= e H1_STYLE_CLASS_ID eh1
+H1_STYLE_CLASS_ID /h1 e XH1 e
+
 BODY h2 body H2 h2body
 H2 /h2 h2 XH2 e
+
+H2 id= h2 H2_ID eh2
+H2_ID /h2 e XH2 e
+H2_ID class= e H2_ID_CLASS eh2
+H2_ID_CLASS /h2 e XH2 e
+H2_ID style= e H2_ID_STYLE eh2
+H2_ID_STYLE /h2 e XH2 e
+H2_ID_CLASS style= e H2_ID_CLASS_STYLE eh2
+H2_ID_CLASS_STYLE /h2 e XH2 e
+H2_ID_STYLE class= e H2_ID_STYLE_CLASS eh2
+H2_ID_STYLE_CLASS /h2 e XH2 e
+
+H2 class= h2 H2_CLASS eh2
+H2_CLASS /h2 e XH2 e 
+H2_CLASS id= e H2_CLASS_ID eh2
+H2_CLASS_ID /h2 e XH2 e
+H2_CLASS style= e H2_CLASS_STYLE eh2
+H2_CLASS_STYLE /h2 e XH2 e
+H2_CLASS_ID style= e H2_CLASS_ID_STYLE eh2
+H2_CLASS_ID_STYLE /h2 e XH2 e
+H2_CLASS_STYLE id= e H2_CLASS_STYLE_ID eh2
+H2_CLASS_STYLE_ID /h2 e XH2 e
+
+H2 style= h2 H2_STYLE eh2
+H2_STYLE /h2 e XH2 e
+H2_STYLE id= e H2_STYLE_ID eh2
+H2_STYLE_ID /h2 e XH2 e
+H2_STYLE class= e H2_STYLE_CLASS eh2
+H2_STYLE_CLASS /h2 e XH2 e
+H2_STYLE_ID class= e H2_STYLE_ID_CLASS eh2
+H2_STYLE_ID_CLASS /h2 e XH2 e
+H2_STYLE_CLASS id= e H2_STYLE_CLASS_ID eh2
+H2_STYLE_CLASS_ID /h2 e XH2 e
+
+
 BODY h3 body H3 h3body
 H3 /h3 h3 XH3 e
+
+H3 id= h3 H3_ID eh3
+H3_ID /h3 e XH3 e
+H3_ID class= e H3_ID_CLASS eh3
+H3_ID_CLASS /h3 e XH3 e
+H3_ID style= e H3_ID_STYLE eh3
+H3_ID_STYLE /h3 e XH3 e
+H3_ID_CLASS style= e H3_ID_CLASS_STYLE eh3
+H3_ID_CLASS_STYLE /h3 e XH3 e
+H3_ID_STYLE class= e H3_ID_STYLE_CLASS eh3
+H3_ID_STYLE_CLASS /h3 e XH3 e
+
+H3 class= h3 H3_CLASS eh3
+H3_CLASS /h3 e XH3 e 
+H3_CLASS id= e H3_CLASS_ID eh3
+H3_CLASS_ID /h3 e XH3 e
+H3_CLASS style= e H3_CLASS_STYLE eh3
+H3_CLASS_STYLE /h3 e XH3 e
+H3_CLASS_ID style= e H3_CLASS_ID_STYLE eh3
+H3_CLASS_ID_STYLE /h3 e XH3 e
+H3_CLASS_STYLE id= e H3_CLASS_STYLE_ID eh3
+H3_CLASS_STYLE_ID /h3 e XH3 e
+
+H3 style= h3 H3_STYLE eh3
+H3_STYLE /h3 e XH3 e
+H3_STYLE id= e H3_STYLE_ID eh3
+H3_STYLE_ID /h3 e XH3 e
+H3_STYLE class= e H3_STYLE_CLASS eh3
+H3_STYLE_CLASS /h3 e XH3 e
+H3_STYLE_ID class= e H3_STYLE_ID_CLASS eh3
+H3_STYLE_ID_CLASS /h3 e XH3 e
+H3_STYLE_CLASS id= e H3_STYLE_CLASS_ID eh3
+H3_STYLE_CLASS_ID /h3 e XH3 e
+
 BODY h4 body H4 h4body
 H4 /h4 h4 XH4 e
+
+H4 id= h4 H4_ID eh4
+H4_ID /h4 e XH4 e
+H4_ID class= e H4_ID_CLASS eh4
+H4_ID_CLASS /h4 e XH4 e
+H4_ID style= e H4_ID_STYLE eh4
+H4_ID_STYLE /h4 e XH4 e
+H4_ID_CLASS style= e H4_ID_CLASS_STYLE eh4
+H4_ID_CLASS_STYLE /h4 e XH4 e
+H4_ID_STYLE class= e H4_ID_STYLE_CLASS eh4
+H4_ID_STYLE_CLASS /h4 e XH4 e
+
+H4 class= h4 H4_CLASS eh4
+H4_CLASS /h4 e XH4 e 
+H4_CLASS id= e H4_CLASS_ID eh4
+H4_CLASS_ID /h4 e XH4 e
+H4_CLASS style= e H4_CLASS_STYLE eh4
+H4_CLASS_STYLE /h4 e XH4 e
+H4_CLASS_ID style= e H4_CLASS_ID_STYLE eh4
+H4_CLASS_ID_STYLE /h4 e XH4 e
+H4_CLASS_STYLE id= e H4_CLASS_STYLE_ID eh4
+H4_CLASS_STYLE_ID /h4 e XH4 e
+
+H4 style= h4 H4_STYLE eh4
+H4_STYLE /h4 e XH4 e
+H4_STYLE id= e H4_STYLE_ID eh4
+H4_STYLE_ID /h4 e XH4 e
+H4_STYLE class= e H4_STYLE_CLASS eh4
+H4_STYLE_CLASS /h4 e XH4 e
+H4_STYLE_ID class= e H4_STYLE_ID_CLASS eh4
+H4_STYLE_ID_CLASS /h4 e XH4 e
+H4_STYLE_CLASS id= e H4_STYLE_CLASS_ID eh4
+H4_STYLE_CLASS_ID /h4 e XH4 e
+
 BODY h5 body H5 h5body
 H5 /h5 h5 XH5 e
+
+H5 id= h5 H5_ID eh5
+H5_ID /h5 e XH5 e
+H5_ID class= e H5_ID_CLASS eh5
+H5_ID_CLASS /h5 e XH5 e
+H5_ID style= e H5_ID_STYLE eh5
+H5_ID_STYLE /h5 e XH5 e
+H5_ID_CLASS style= e H5_ID_CLASS_STYLE eh5
+H5_ID_CLASS_STYLE /h5 e XH5 e
+H5_ID_STYLE class= e H5_ID_STYLE_CLASS eh5
+H5_ID_STYLE_CLASS /h5 e XH5 e
+
+H5 class= h5 H5_CLASS eh5
+H5_CLASS /h5 e XH5 e 
+H5_CLASS id= e H5_CLASS_ID eh5
+H5_CLASS_ID /h5 e XH5 e
+H5_CLASS style= e H5_CLASS_STYLE eh5
+H5_CLASS_STYLE /h5 e XH5 e
+H5_CLASS_ID style= e H5_CLASS_ID_STYLE eh5
+H5_CLASS_ID_STYLE /h5 e XH5 e
+H5_CLASS_STYLE id= e H5_CLASS_STYLE_ID eh5
+H5_CLASS_STYLE_ID /h5 e XH5 e
+
+H5 style= h5 H5_STYLE eh5
+H5_STYLE /h5 e XH5 e
+H5_STYLE id= e H5_STYLE_ID eh5
+H5_STYLE_ID /h5 e XH5 e
+H5_STYLE class= e H5_STYLE_CLASS eh5
+H5_STYLE_CLASS /h5 e XH5 e
+H5_STYLE_ID class= e H5_STYLE_ID_CLASS eh5
+H5_STYLE_ID_CLASS /h5 e XH5 e
+H5_STYLE_CLASS id= e H5_STYLE_CLASS_ID eh5
+H5_STYLE_CLASS_ID /h5 e XH5 e
+
 BODY h6 body H6 h6body
 H6 /h6 h6 XH6 e
+
+H6 id= h6 H6_ID eh6
+H6_ID /h6 e XH6 e
+H6_ID class= e H6_ID_CLASS eh6
+H6_ID_CLASS /h6 e XH6 e
+H6_ID style= e H6_ID_STYLE eh6
+H6_ID_STYLE /h6 e XH6 e
+H6_ID_CLASS style= e H6_ID_CLASS_STYLE eh6
+H6_ID_CLASS_STYLE /h6 e XH6 e
+H6_ID_STYLE class= e H6_ID_STYLE_CLASS eh6
+H6_ID_STYLE_CLASS /h6 e XH6 e
+
+H6 class= h6 H6_CLASS eh6
+H6_CLASS /h6 e XH6 e 
+H6_CLASS id= e H6_CLASS_ID eh6
+H6_CLASS_ID /h6 e XH6 e
+H6_CLASS style= e H6_CLASS_STYLE eh6
+H6_CLASS_STYLE /h6 e XH6 e
+H6_CLASS_ID style= e H6_CLASS_ID_STYLE eh6
+H6_CLASS_ID_STYLE /h6 e XH6 e
+H6_CLASS_STYLE id= e H6_CLASS_STYLE_ID eh6
+H6_CLASS_STYLE_ID /h6 e XH6 e
+
+H6 style= h6 H6_STYLE eh6
+H6_STYLE /h6 e XH6 e
+H6_STYLE id= e H6_STYLE_ID eh6
+H6_STYLE_ID /h6 e XH6 e
+H6_STYLE class= e H6_STYLE_CLASS eh6
+H6_STYLE_CLASS /h6 e XH6 e
+H6_STYLE_ID class= e H6_STYLE_ID_CLASS eh6
+H6_STYLE_ID_CLASS /h6 e XH6 e
+H6_STYLE_CLASS id= e H6_STYLE_CLASS_ID eh6
+H6_STYLE_CLASS_ID /h6 e XH6 e
 
 
 // HANDLING PARAGRAPH

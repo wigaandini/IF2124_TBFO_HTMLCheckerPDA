@@ -1,12 +1,11 @@
 STATE INPUT STACK-BOTTOM NEXT-STATE STACK-NOW
 
-{antara mau bikin state REJECT atau dia tetap di state dia doang?}
 START html Z0 HTML htmlZ0
 HTML id html HTML html
 HTML class html HTML html
 HTML style html HTML html
 HTML head html HEAD headhtml
-XBODY /html html FINAL e {kalo misalnya udah ditutup htmlnya, udah pasti sisanya e, di pop soalnya}
+XBODY /html html FINAL e
 
 HEAD id head HEAD head
 HEAD class head HEAD head
@@ -19,14 +18,10 @@ SCRIPT /script script XSCRIPT e
 XSCRIPT /head head XHEAD e
 SCRIPT src= script SRCSCRIPT src=script
 
-{kalo ketemu > lgsg stop? => ke state XSCRIPT}
-
 XSCRIPT /head head XHEAD e
 HEAD link head LINK linkhead
 LINK rel= link LINK rel=link
 LINK href rel= LINK hrefrel=
-
-{kalo ketemu > lgsg stop? => ke state XHEAD}
 
 HEAD /head head XHEAD e
 XHEAD body html BODY bodyhtml
@@ -108,7 +103,6 @@ H2_STYLE_ID class= e H2_STYLE_ID_CLASS eh2
 H2_STYLE_ID_CLASS /h2 e XH2 e
 H2_STYLE_CLASS id= e H2_STYLE_CLASS_ID eh2
 H2_STYLE_CLASS_ID /h2 e XH2 e
-
 
 BODY h3 body H3 h3body
 H3 /h3 h3 XH3 e
@@ -256,7 +250,7 @@ H6_STYLE_CLASS_ID /h6 e XH6 e
 
 
 // HANDLING PARAGRAPH
-{tanpa bold, em, strong, small}
+
 BODY p body P pbody
 P /p p XP e
 
@@ -293,7 +287,6 @@ P_STYLE_ID_CLASS /p e XP e
 P_STYLE_CLASS id= e P_STYLE_CLASS_ID ep
 P_STYLE_CLASS_ID /p e XP e
 
-{with bold}
 P b p BOLD bp
 BOLD /b b XBOLD e
 XBOLD /p p XP e
@@ -316,7 +309,6 @@ P_STYLE_CLASS b e BOLD b
 P_STYLE_ID_CLASS b e BOLD b
 P_STYLE_CLASS_ID b e BOLD b
 
-{with strong}
 P strong p STRONG strongp
 STRONG /strong strong XSTRONG e
 XSTRONG /p p XP e
@@ -339,7 +331,6 @@ P_STYLE_CLASS strong e STRONG strong
 P_STYLE_ID_CLASS strong e STRONG strong
 P_STYLE_CLASS_ID strong e STRONG strong
 
-{with em}
 P em p ITALIC emp
 ITALIC /em em XITALIC e
 XITALIC /p p XP e
@@ -362,7 +353,6 @@ P_STYLE_CLASS em e ITALIC em
 P_STYLE_ID_CLASS em e ITALIC em
 P_STYLE_CLASS_ID em e ITALIC em
 
-{with small}
 P small p SMALL smallp
 SMALL /small SMALL XSMALL e
 XSMALL /p p XP e
@@ -385,8 +375,6 @@ P_STYLE_CLASS small e SMALL small
 P_STYLE_ID_CLASS small e SMALL small
 P_STYLE_CLASS_ID small e SMALL small
 
-{br}
-{kasus p (tanpa bold) di breakline}
 P br p BREAK brp
 BREAK /br br XBREAK e
 
@@ -409,24 +397,17 @@ P_STYLE_ID_CLASS br e BREAK br
 P_STYLE_CLASS_ID br e BREAK br
 
 
-
 // BOLD (IN PARAGRAPH)
-{break di dalam bold}
+
 BOLD br b BREAK brb
-
-{em di dalam bold}
 BOLD em b ITALIC emb
-
-{strong di dalam bold}
 BOLD strong b STRONG strongb
-
-{small di dalam bold}
 BOLD small b SMALL smallb
 
 
 
 // ABBR
-{abbr}
+
 BODY abbr body ABBR abbrbody
 ABBR /abbr abbr XABBR e
 XABBR /body body XBODY e
@@ -434,48 +415,28 @@ XABBR /body body XBODY e
 
 
 // EM (IN PARAGRAPH)
-{break di dalam em}
+
 ITALIC br em BREAK brem
-
-{bold di dalam em}
 ITALIC b em BOLD bem
-
-{strong di dalam em}
 ITALIC strong em STRONG strongem
-
-{small di dalam em}
 ITALIC small em SMALL smallem
 
 
 
 // STRONG (IN PARAGRAPH)
-{break di dalam strong}
+
 STRONG br strong BREAK brstrong
-
-{bold di dalam strong}
 STRONG b strong BOLD bstrong
-
-{em di dalam strong}
 STRONG em strong ITALIC emstrong
-
-{small di dalam strong}
 STRONG small strong SMALL smallstrong
 
 
-
 // SMALL (IN PARAGRAPH)
-{break di dalam small}
+
 SMALL br small BREAK brsmall
-
-{bold di dalam small}
 SMALL b small BOLD bsmall
-
-{em di dalam small}
 SMALL em small ITALIC emsmall
-
-{strong di dalam small}
 SMALL strong small STRONG strongsmall
-
 
 
 // HR 
@@ -494,7 +455,6 @@ XH5 hr e XH5 e
 XH6 hr e XH6 e
 P hr p P p 
 XP hr e P e
-
 
 
 // DIV
@@ -524,13 +484,11 @@ DIV div div DIV divdiv
 DIV /div div DIV div
 
 
-
 // IMG
 BODY img body IMG imgbody
 IMG src= img IMGSRC src=img
 IMGSRC /img img XIMG e
 XIMG /body body XBODY e
-
 
 
 // LINK
@@ -541,13 +499,11 @@ LINK /link link XLINK e
 XLINK /head head XHEAD e
 
 
-
 // A
 BODY a body A abody
 A href= a AHREF href=a
 AHREF /a a XA e
 XA /body body XBODY e
-
 
 
 // BUTTON
@@ -636,7 +592,6 @@ BUTTONTYPERESET /button button XBUTTON e
 
 BUTTONTYPE /button button XBUTTON e
 XBUTTON /body body XBODY e
-
 
 
 // FORM

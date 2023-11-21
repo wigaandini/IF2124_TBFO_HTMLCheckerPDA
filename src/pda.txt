@@ -676,6 +676,7 @@ FORM_STYLE_ID_CLASS /form e XFORM e
 FORM_STYLE_CLASS id= e FORM_STYLE_CLASS_ID eform
 FORM_STYLE_CLASS_ID /form e XFORM e
 
+{update habis styling baru ada action, method, dll}
 FORM action= form FORMACTION eform
 FORM method="post" form FORMMETHODPOST eform
 FORM method=get form FORMMETHODGET eform

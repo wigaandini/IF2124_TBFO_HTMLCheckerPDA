@@ -298,6 +298,24 @@ P b p BOLD bp
 BOLD /b b XBOLD e
 XBOLD /p p XP e
 
+P_ID b e BOLD b
+P_ID_CLASS b e BOLD b
+P_ID_STYLE b e BOLD b
+P_ID_CLASS_STYLE b e BOLD b 
+P_ID_STYLE_CLASS b e BOLD b
+
+P_CLASS b e BOLD b
+P_CLASS_ID b e BOLD b
+P_CLASS_STYLE b e BOLD b
+P_CLASS_ID_STYLE b e BOLD b
+P_CLASS_STYLE_ID b e BOLD b
+
+P_STYLE b e BOLD b
+P_STYLE_ID b e BOLD b
+P_STYLE_CLASS b e BOLD b
+P_STYLE_ID_CLASS b e BOLD b
+P_STYLE_CLASS_ID b e BOLD b
+
 {with strong}
 P strong p STRONG strongp
 STRONG /strong strong XSTRONG e

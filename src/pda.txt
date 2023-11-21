@@ -1,11 +1,12 @@
 STATE INPUT STACK-BOTTOM NEXT-STATE STACK-NOW
 
+{antara mau bikin state REJECT atau dia tetap di state dia doang?}
 START html Z0 HTML htmlZ0
 HTML id html HTML html
 HTML class html HTML html
 HTML style html HTML html
 HTML head html HEAD headhtml
-XBODY /html html FINAL e {kalo misalnya udah ditutup htmlnya, udah pasti sisanya e}
+XBODY /html html FINAL e {kalo misalnya udah ditutup htmlnya, udah pasti sisanya e, di pop soalnya}
 
 HEAD id head HEAD head
 HEAD class head HEAD head
@@ -17,12 +18,16 @@ HEAD script head SCRIPT scripthead
 SCRIPT /script script XSCRIPT e
 XSCRIPT /head head XHEAD e
 SCRIPT src= script SRCSCRIPT src=script
+
 {kalo ketemu > lgsg stop? => ke state XSCRIPT}
+
 XSCRIPT /head head XHEAD e
 HEAD link head LINK linkhead
 LINK rel= link LINK rel=link
 LINK href rel= LINK hrefrel=
+
 {kalo ketemu > lgsg stop? => ke state XHEAD}
+
 HEAD /head head XHEAD e
 XHEAD body html BODY bodyhtml
 
@@ -34,16 +39,220 @@ BODY /body body XBODY e
 // HANDLING HEADER
 BODY h1 body H1 h1body
 H1 /h1 h1 XH1 e
+
+H1 id= h1 H1_ID eh1
+H1_ID /h1 e XH1 e
+H1_ID class= e H1_ID_CLASS eh1
+H1_ID_CLASS /h1 e XH1 e
+H1_ID style= e H1_ID_STYLE eh1
+H1_ID_STYLE /h1 e XH1 e
+H1_ID_CLASS style= e H1_ID_CLASS_STYLE eh1
+H1_ID_CLASS_STYLE /h1 e XH1 e
+H1_ID_STYLE class= e H1_ID_STYLE_CLASS eh1
+H1_ID_STYLE_CLASS /h1 e XH1 e
+
+H1 class= h1 H1_CLASS eh1
+H1_CLASS /h1 e XH1 e 
+H1_CLASS id= e H1_CLASS_ID eh1
+H1_CLASS_ID /h1 e XH1 e
+H1_CLASS style= e H1_CLASS_STYLE eh1
+H1_CLASS_STYLE /h1 e XH1 e
+H1_CLASS_ID style= e H1_CLASS_ID_STYLE eh1
+H1_CLASS_ID_STYLE /h1 e XH1 e
+H1_CLASS_STYLE id= e H1_CLASS_STYLE_ID eh1
+H1_CLASS_STYLE_ID /h1 e XH1 e
+
+H1 style= h1 H1_STYLE eh1
+H1_STYLE /h1 e XH1 e
+H1_STYLE id= e H1_STYLE_ID eh1
+H1_STYLE_ID /h1 e XH1 e
+H1_STYLE class= e H1_STYLE_CLASS eh1
+H1_STYLE_CLASS /h1 e XH1 e
+H1_STYLE_ID class= e H1_STYLE_ID_CLASS eh1
+H1_STYLE_ID_CLASS /h1 e XH1 e
+H1_STYLE_CLASS id= e H1_STYLE_CLASS_ID eh1
+H1_STYLE_CLASS_ID /h1 e XH1 e
+
 BODY h2 body H2 h2body
 H2 /h2 h2 XH2 e
+
+H2 id= h2 H2_ID eh2
+H2_ID /h2 e XH2 e
+H2_ID class= e H2_ID_CLASS eh2
+H2_ID_CLASS /h2 e XH2 e
+H2_ID style= e H2_ID_STYLE eh2
+H2_ID_STYLE /h2 e XH2 e
+H2_ID_CLASS style= e H2_ID_CLASS_STYLE eh2
+H2_ID_CLASS_STYLE /h2 e XH2 e
+H2_ID_STYLE class= e H2_ID_STYLE_CLASS eh2
+H2_ID_STYLE_CLASS /h2 e XH2 e
+
+H2 class= h2 H2_CLASS eh2
+H2_CLASS /h2 e XH2 e 
+H2_CLASS id= e H2_CLASS_ID eh2
+H2_CLASS_ID /h2 e XH2 e
+H2_CLASS style= e H2_CLASS_STYLE eh2
+H2_CLASS_STYLE /h2 e XH2 e
+H2_CLASS_ID style= e H2_CLASS_ID_STYLE eh2
+H2_CLASS_ID_STYLE /h2 e XH2 e
+H2_CLASS_STYLE id= e H2_CLASS_STYLE_ID eh2
+H2_CLASS_STYLE_ID /h2 e XH2 e
+
+H2 style= h2 H2_STYLE eh2
+H2_STYLE /h2 e XH2 e
+H2_STYLE id= e H2_STYLE_ID eh2
+H2_STYLE_ID /h2 e XH2 e
+H2_STYLE class= e H2_STYLE_CLASS eh2
+H2_STYLE_CLASS /h2 e XH2 e
+H2_STYLE_ID class= e H2_STYLE_ID_CLASS eh2
+H2_STYLE_ID_CLASS /h2 e XH2 e
+H2_STYLE_CLASS id= e H2_STYLE_CLASS_ID eh2
+H2_STYLE_CLASS_ID /h2 e XH2 e
+
+
 BODY h3 body H3 h3body
 H3 /h3 h3 XH3 e
+
+H3 id= h3 H3_ID eh3
+H3_ID /h3 e XH3 e
+H3_ID class= e H3_ID_CLASS eh3
+H3_ID_CLASS /h3 e XH3 e
+H3_ID style= e H3_ID_STYLE eh3
+H3_ID_STYLE /h3 e XH3 e
+H3_ID_CLASS style= e H3_ID_CLASS_STYLE eh3
+H3_ID_CLASS_STYLE /h3 e XH3 e
+H3_ID_STYLE class= e H3_ID_STYLE_CLASS eh3
+H3_ID_STYLE_CLASS /h3 e XH3 e
+
+H3 class= h3 H3_CLASS eh3
+H3_CLASS /h3 e XH3 e 
+H3_CLASS id= e H3_CLASS_ID eh3
+H3_CLASS_ID /h3 e XH3 e
+H3_CLASS style= e H3_CLASS_STYLE eh3
+H3_CLASS_STYLE /h3 e XH3 e
+H3_CLASS_ID style= e H3_CLASS_ID_STYLE eh3
+H3_CLASS_ID_STYLE /h3 e XH3 e
+H3_CLASS_STYLE id= e H3_CLASS_STYLE_ID eh3
+H3_CLASS_STYLE_ID /h3 e XH3 e
+
+H3 style= h3 H3_STYLE eh3
+H3_STYLE /h3 e XH3 e
+H3_STYLE id= e H3_STYLE_ID eh3
+H3_STYLE_ID /h3 e XH3 e
+H3_STYLE class= e H3_STYLE_CLASS eh3
+H3_STYLE_CLASS /h3 e XH3 e
+H3_STYLE_ID class= e H3_STYLE_ID_CLASS eh3
+H3_STYLE_ID_CLASS /h3 e XH3 e
+H3_STYLE_CLASS id= e H3_STYLE_CLASS_ID eh3
+H3_STYLE_CLASS_ID /h3 e XH3 e
+
 BODY h4 body H4 h4body
 H4 /h4 h4 XH4 e
+
+H4 id= h4 H4_ID eh4
+H4_ID /h4 e XH4 e
+H4_ID class= e H4_ID_CLASS eh4
+H4_ID_CLASS /h4 e XH4 e
+H4_ID style= e H4_ID_STYLE eh4
+H4_ID_STYLE /h4 e XH4 e
+H4_ID_CLASS style= e H4_ID_CLASS_STYLE eh4
+H4_ID_CLASS_STYLE /h4 e XH4 e
+H4_ID_STYLE class= e H4_ID_STYLE_CLASS eh4
+H4_ID_STYLE_CLASS /h4 e XH4 e
+
+H4 class= h4 H4_CLASS eh4
+H4_CLASS /h4 e XH4 e 
+H4_CLASS id= e H4_CLASS_ID eh4
+H4_CLASS_ID /h4 e XH4 e
+H4_CLASS style= e H4_CLASS_STYLE eh4
+H4_CLASS_STYLE /h4 e XH4 e
+H4_CLASS_ID style= e H4_CLASS_ID_STYLE eh4
+H4_CLASS_ID_STYLE /h4 e XH4 e
+H4_CLASS_STYLE id= e H4_CLASS_STYLE_ID eh4
+H4_CLASS_STYLE_ID /h4 e XH4 e
+
+H4 style= h4 H4_STYLE eh4
+H4_STYLE /h4 e XH4 e
+H4_STYLE id= e H4_STYLE_ID eh4
+H4_STYLE_ID /h4 e XH4 e
+H4_STYLE class= e H4_STYLE_CLASS eh4
+H4_STYLE_CLASS /h4 e XH4 e
+H4_STYLE_ID class= e H4_STYLE_ID_CLASS eh4
+H4_STYLE_ID_CLASS /h4 e XH4 e
+H4_STYLE_CLASS id= e H4_STYLE_CLASS_ID eh4
+H4_STYLE_CLASS_ID /h4 e XH4 e
+
 BODY h5 body H5 h5body
 H5 /h5 h5 XH5 e
+
+H5 id= h5 H5_ID eh5
+H5_ID /h5 e XH5 e
+H5_ID class= e H5_ID_CLASS eh5
+H5_ID_CLASS /h5 e XH5 e
+H5_ID style= e H5_ID_STYLE eh5
+H5_ID_STYLE /h5 e XH5 e
+H5_ID_CLASS style= e H5_ID_CLASS_STYLE eh5
+H5_ID_CLASS_STYLE /h5 e XH5 e
+H5_ID_STYLE class= e H5_ID_STYLE_CLASS eh5
+H5_ID_STYLE_CLASS /h5 e XH5 e
+
+H5 class= h5 H5_CLASS eh5
+H5_CLASS /h5 e XH5 e 
+H5_CLASS id= e H5_CLASS_ID eh5
+H5_CLASS_ID /h5 e XH5 e
+H5_CLASS style= e H5_CLASS_STYLE eh5
+H5_CLASS_STYLE /h5 e XH5 e
+H5_CLASS_ID style= e H5_CLASS_ID_STYLE eh5
+H5_CLASS_ID_STYLE /h5 e XH5 e
+H5_CLASS_STYLE id= e H5_CLASS_STYLE_ID eh5
+H5_CLASS_STYLE_ID /h5 e XH5 e
+
+H5 style= h5 H5_STYLE eh5
+H5_STYLE /h5 e XH5 e
+H5_STYLE id= e H5_STYLE_ID eh5
+H5_STYLE_ID /h5 e XH5 e
+H5_STYLE class= e H5_STYLE_CLASS eh5
+H5_STYLE_CLASS /h5 e XH5 e
+H5_STYLE_ID class= e H5_STYLE_ID_CLASS eh5
+H5_STYLE_ID_CLASS /h5 e XH5 e
+H5_STYLE_CLASS id= e H5_STYLE_CLASS_ID eh5
+H5_STYLE_CLASS_ID /h5 e XH5 e
+
 BODY h6 body H6 h6body
 H6 /h6 h6 XH6 e
+
+H6 id= h6 H6_ID eh6
+H6_ID /h6 e XH6 e
+H6_ID class= e H6_ID_CLASS eh6
+H6_ID_CLASS /h6 e XH6 e
+H6_ID style= e H6_ID_STYLE eh6
+H6_ID_STYLE /h6 e XH6 e
+H6_ID_CLASS style= e H6_ID_CLASS_STYLE eh6
+H6_ID_CLASS_STYLE /h6 e XH6 e
+H6_ID_STYLE class= e H6_ID_STYLE_CLASS eh6
+H6_ID_STYLE_CLASS /h6 e XH6 e
+
+H6 class= h6 H6_CLASS eh6
+H6_CLASS /h6 e XH6 e 
+H6_CLASS id= e H6_CLASS_ID eh6
+H6_CLASS_ID /h6 e XH6 e
+H6_CLASS style= e H6_CLASS_STYLE eh6
+H6_CLASS_STYLE /h6 e XH6 e
+H6_CLASS_ID style= e H6_CLASS_ID_STYLE eh6
+H6_CLASS_ID_STYLE /h6 e XH6 e
+H6_CLASS_STYLE id= e H6_CLASS_STYLE_ID eh6
+H6_CLASS_STYLE_ID /h6 e XH6 e
+
+H6 style= h6 H6_STYLE eh6
+H6_STYLE /h6 e XH6 e
+H6_STYLE id= e H6_STYLE_ID eh6
+H6_STYLE_ID /h6 e XH6 e
+H6_STYLE class= e H6_STYLE_CLASS eh6
+H6_STYLE_CLASS /h6 e XH6 e
+H6_STYLE_ID class= e H6_STYLE_ID_CLASS eh6
+H6_STYLE_ID_CLASS /h6 e XH6 e
+H6_STYLE_CLASS id= e H6_STYLE_CLASS_ID eh6
+H6_STYLE_CLASS_ID /h6 e XH6 e
 
 
 // HANDLING PARAGRAPH
@@ -51,30 +260,153 @@ H6 /h6 h6 XH6 e
 BODY p body P pbody
 P /p p XP e
 
+P id= p P_ID ep
+P_ID /p e XP e
+P_ID class= e P_ID_CLASS ep
+P_ID_CLASS /p e XP e
+P_ID style= e P_ID_STYLE ep
+P_ID_STYLE /p e XP e
+P_ID_CLASS style= e P_ID_CLASS_STYLE ep
+P_ID_CLASS_STYLE /p e XP e
+P_ID_STYLE class= e P_ID_STYLE_CLASS ep
+P_ID_STYLE_CLASS /p e XP e
+
+P class= p P_CLASS ep
+P_CLASS /p e XP e 
+P_CLASS id= e P_CLASS_ID ep
+P_CLASS_ID /p e XP e
+P_CLASS style= e P_CLASS_STYLE ep
+P_CLASS_STYLE /p e XP e
+P_CLASS_ID style= e P_CLASS_ID_STYLE ep
+P_CLASS_ID_STYLE /p e XP e
+P_CLASS_STYLE id= e P_CLASS_STYLE_ID ep
+P_CLASS_STYLE_ID /p e XP e
+
+P style= p P_STYLE ep
+P_STYLE /p e XP e
+P_STYLE id= e P_STYLE_ID ep
+P_STYLE_ID /p e XP e
+P_STYLE class= e P_STYLE_CLASS ep
+P_STYLE_CLASS /p e XP e
+P_STYLE_ID class= e P_STYLE_ID_CLASS ep
+P_STYLE_ID_CLASS /p e XP e
+P_STYLE_CLASS id= e P_STYLE_CLASS_ID ep
+P_STYLE_CLASS_ID /p e XP e
+
 {with bold}
 P b p BOLD bp
 BOLD /b b XBOLD e
 XBOLD /p p XP e
+
+P_ID b e BOLD b
+P_ID_CLASS b e BOLD b
+P_ID_STYLE b e BOLD b
+P_ID_CLASS_STYLE b e BOLD b 
+P_ID_STYLE_CLASS b e BOLD b
+
+P_CLASS b e BOLD b
+P_CLASS_ID b e BOLD b
+P_CLASS_STYLE b e BOLD b
+P_CLASS_ID_STYLE b e BOLD b
+P_CLASS_STYLE_ID b e BOLD b
+
+P_STYLE b e BOLD b
+P_STYLE_ID b e BOLD b
+P_STYLE_CLASS b e BOLD b
+P_STYLE_ID_CLASS b e BOLD b
+P_STYLE_CLASS_ID b e BOLD b
 
 {with strong}
 P strong p STRONG strongp
 STRONG /strong strong XSTRONG e
 XSTRONG /p p XP e
 
+P_ID strong e STRONG strong
+P_ID_CLASS strong e STRONG strong
+P_ID_STYLE strong e STRONG strong
+P_ID_CLASS_STYLE strong e STRONG strong 
+P_ID_STYLE_CLASS strong e STRONG strong
+
+P_CLASS strong e STRONG strong
+P_CLASS_ID strong e STRONG strong
+P_CLASS_STYLE strong e STRONG strong
+P_CLASS_ID_STYLE strong e STRONG strong
+P_CLASS_STYLE_ID strong e STRONG strong
+
+P_STYLE strong e STRONG strong
+P_STYLE_ID strong e STRONG strong
+P_STYLE_CLASS strong e STRONG strong
+P_STYLE_ID_CLASS strong e STRONG strong
+P_STYLE_CLASS_ID strong e STRONG strong
+
 {with em}
 P em p ITALIC emp
 ITALIC /em em XITALIC e
 XITALIC /p p XP e
+
+P_ID em e ITALIC em
+P_ID_CLASS em e ITALIC em
+P_ID_STYLE em e ITALIC em
+P_ID_CLASS_STYLE em e ITALIC em 
+P_ID_STYLE_CLASS em e ITALIC em
+
+P_CLASS em e ITALIC em
+P_CLASS_ID em e ITALIC em
+P_CLASS_STYLE em e ITALIC em
+P_CLASS_ID_STYLE em e ITALIC em
+P_CLASS_STYLE_ID em e ITALIC em
+
+P_STYLE em e ITALIC em
+P_STYLE_ID em e ITALIC em
+P_STYLE_CLASS em e ITALIC em
+P_STYLE_ID_CLASS em e ITALIC em
+P_STYLE_CLASS_ID em e ITALIC em
 
 {with small}
 P small p SMALL smallp
 SMALL /small SMALL XSMALL e
 XSMALL /p p XP e
 
+P_ID small e SMALL small
+P_ID_CLASS small e SMALL small
+P_ID_STYLE small e SMALL small
+P_ID_CLASS_STYLE small e SMALL small 
+P_ID_STYLE_CLASS small e SMALL small
+
+P_CLASS small e SMALL small
+P_CLASS_ID small e SMALL small
+P_CLASS_STYLE small e SMALL small
+P_CLASS_ID_STYLE small e SMALL small
+P_CLASS_STYLE_ID small e SMALL small
+
+P_STYLE small e SMALL small
+P_STYLE_ID small e SMALL small
+P_STYLE_CLASS small e SMALL small
+P_STYLE_ID_CLASS small e SMALL small
+P_STYLE_CLASS_ID small e SMALL small
+
 {br}
 {kasus p (tanpa bold) di breakline}
 P br p BREAK brp
 BREAK /br br XBREAK e
+
+P_ID br e BREAK br
+P_ID_CLASS br e BREAK br
+P_ID_STYLE br e BREAK br
+P_ID_CLASS_STYLE br e BREAK br 
+P_ID_STYLE_CLASS br e BREAK br
+
+P_CLASS br e BREAK br
+P_CLASS_ID br e BREAK br
+P_CLASS_STYLE br e BREAK br
+P_CLASS_ID_STYLE br e BREAK br
+P_CLASS_STYLE_ID br e BREAK br
+
+P_STYLE br e BREAK br
+P_STYLE_ID br e BREAK br
+P_STYLE_CLASS br e BREAK br
+P_STYLE_ID_CLASS br e BREAK br
+P_STYLE_CLASS_ID br e BREAK br
 
 
 
@@ -217,13 +549,22 @@ AHREF /a a XA e
 XA /body body XBODY e
 
 
+
 // BUTTON
 BODY button body BUTTON buttonbody
 BUTTON id button BUTTON button
 BUTTON class button BUTTON button
 BUTTON style button BUTTON button
 BUTTON /button button XBUTTON e
-{nanti tambahin type apa aja}
+
+BUTTON type= button BUTTONTYPE type=button
+BUTTON type=submit button BUTTONTYPESUBMIT type=submitbutton
+BUTTON type=reset button BUTTONTYPERESET type=resetbutton
+
+BUTTONTYPE /button button XBUTTON e
+BUTTONTYPESUBMIT /button button XBUTTON e
+BUTTONTYPERESET /button button XBUTTON e
+XBUTTON /body body XBODY e
 
 
 
@@ -232,12 +573,15 @@ BODY form body FORM formbody
 FORM id form FORM form
 FORM class form FORM form
 FORM style form FORM form
-FORM action= form FORM_ACTION action
-FORM_ACTION action form FORM_ACTION action
-FORM /form form XFORM e
-FORM method= form FORM_METHOD method
-FORM_METHOD method form FORM_METHOD method
-{nanti tambahin method get sm post}
+
+FORM action= form FORMACTION action=form
+FORM method=post form FORMMETHODPOST method=postform
+FORM method=get form FORMMETHODGET method=getform
+
+FORMACTION /form form XFORM e
+FORMMETHODPOST /form form XFORM e
+FORMMETHODGET /form form XFORM e
+XFORM /body body XBODY e
 
 
 
@@ -246,10 +590,18 @@ BODY input body INPUT inputbody
 INPUT id input INPUT input
 INPUT class input INPUT input
 INPUT style input INPUT input
-INPUT type= input INPUT_TYPE type
-INPUT_TYPE type input INPUT_TYPE type
-INPUT /input input XINPUT e
-{tambahin type test, password, email, number, checkbox}
+
+INPUT type=text input INPUTTYPETEXT type=textinput
+INPUT type=password input INPUTTYPEPASSWORD type=passwordinput
+INPUT type=email input INPUTTYPEEMAIL type=emailinput
+INPUT type=number input INPUTTYPENUMBER type=numberinput
+INPUT type=checkbox input INPUTTYPECHECKBOX type=checkboxinput
+INPUTTYPETEXT /input input XINPUT e
+INPUTTYPEPASSWORD /input input XINPUT e
+INPUTTYPEEMAIL /input input XINPUT e
+INPUTTYPENUMBER /input input XINPUT e
+INPUTTYPECHECKBOX /input input XINPUT e
+XINPUT /body body XBODY e
 
 
 

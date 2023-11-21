@@ -641,9 +641,40 @@ XBUTTON /body body XBODY e
 
 // FORM
 BODY form body FORM formbody
-FORM id form FORM form
-FORM class form FORM form
-FORM style form FORM form
+FORM /form form XFORM e
+
+FORM id= form FORM_ID eform
+FORM_ID /form e XFORM e
+FORM_ID class= e FORM_ID_CLASS eform
+FORM_ID_CLASS /form e XFORM e
+FORM_ID style= e FORM_ID_STYLE eform
+FORM_ID_STYLE /form e XFORM e
+FORM_ID_CLASS style= e FORM_ID_CLASS_STYLE eform
+FORM_ID_CLASS_STYLE /form e XFORM e
+FORM_ID_STYLE class= e FORM_ID_STYLE_CLASS eform
+FORM_ID_STYLE_CLASS /form e XFORM e
+
+FORM class= form FORM_CLASS eform
+FORM_CLASS /form e XFORM e 
+FORM_CLASS id= e FORM_CLASS_ID eform
+FORM_CLASS_ID /form e XFORM e
+FORM_CLASS style= e FORM_CLASS_STYLE eform
+FORM_CLASS_STYLE /form e XFORM e
+FORM_CLASS_ID style= e FORM_CLASS_ID_STYLE eform
+FORM_CLASS_ID_STYLE /form e XFORM e
+FORM_CLASS_STYLE id= e FORM_CLASS_STYLE_ID eform
+FORM_CLASS_STYLE_ID /form e XFORM e
+
+FORM style= form FORM_STYLE eform
+FORM_STYLE /form e XFORM e
+FORM_STYLE id= e FORM_STYLE_ID eform
+FORM_STYLE_ID /form e XFORM e
+FORM_STYLE class= e FORM_STYLE_CLASS eform
+FORM_STYLE_CLASS /form e XFORM e
+FORM_STYLE_ID class= e FORM_STYLE_ID_CLASS eform
+FORM_STYLE_ID_CLASS /form e XFORM e
+FORM_STYLE_CLASS id= e FORM_STYLE_CLASS_ID eform
+FORM_STYLE_CLASS_ID /form e XFORM e
 
 FORM action= form FORMACTION eform
 FORM method="post" form FORMMETHODPOST eform

@@ -390,6 +390,25 @@ P_STYLE_CLASS_ID small e SMALL small
 P br p BREAK brp
 BREAK /br br XBREAK e
 
+P_ID br e BREAK br
+P_ID_CLASS br e BREAK br
+P_ID_STYLE br e BREAK br
+P_ID_CLASS_STYLE br e BREAK br 
+P_ID_STYLE_CLASS br e BREAK br
+
+P_CLASS br e BREAK br
+P_CLASS_ID br e BREAK br
+P_CLASS_STYLE br e BREAK br
+P_CLASS_ID_STYLE br e BREAK br
+P_CLASS_STYLE_ID br e BREAK br
+
+P_STYLE br e BREAK br
+P_STYLE_ID br e BREAK br
+P_STYLE_CLASS br e BREAK br
+P_STYLE_ID_CLASS br e BREAK br
+P_STYLE_CLASS_ID br e BREAK br
+
+
 
 // BOLD (IN PARAGRAPH)
 {break di dalam bold}

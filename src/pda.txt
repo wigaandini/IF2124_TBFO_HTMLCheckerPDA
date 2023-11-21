@@ -1,37 +1,130 @@
 STATE INPUT STACK-BOTTOM NEXT-STATE STACK-NOW
 
 START html Z0 HTML htmlZ0
-HTML id html HTML html
-HTML class html HTML html
-HTML style html HTML html
+
+HTML id= html HTML_ID ehtml
+HTML_ID /html e XHTML e
+HTML_ID class= e HTML_ID_CLASS ehtml
+HTML_ID_CLASS /html e XHTML e
+HTML_ID style= e HTML_ID_STYLE ehtml
+HTML_ID_STYLE /html e XHTML e
+HTML_ID_CLASS style= e HTML_ID_CLASS_STYLE ehtml
+HTML_ID_CLASS_STYLE /html e XHTML e
+HTML_ID_STYLE class= e HTML_ID_STYLE_CLASS ehtml
+HTML_ID_STYLE_CLASS /html e XHTML e
+
+HTML class= html HTML_CLASS ehtml
+HTML_CLASS /html e XHTML e 
+HTML_CLASS id= e HTML_CLASS_ID ehtml
+HTML_CLASS_ID /html e XHTML e
+HTML_CLASS style= e HTML_CLASS_STYLE ehtml
+HTML_CLASS_STYLE /html e XHTML e
+HTML_CLASS_ID style= e HTML_CLASS_ID_STYLE ehtml
+HTML_CLASS_ID_STYLE /html e XHTML e
+HTML_CLASS_STYLE id= e HTML_CLASS_STYLE_ID ehtml
+HTML_CLASS_STYLE_ID /html e XHTML e
+
+HTML style= html HTML_STYLE ehtml
+HTML_STYLE /html e XHTML e
+HTML_STYLE id= e HTML_STYLE_ID ehtml
+HTML_STYLE_ID /html e XHTML e
+HTML_STYLE class= e HTML_STYLE_CLASS ehtml
+HTML_STYLE_CLASS /html e XHTML e
+HTML_STYLE_ID class= e HTML_STYLE_ID_CLASS ehtml
+HTML_STYLE_ID_CLASS /html e XHTML e
+HTML_STYLE_CLASS id= e HTML_STYLE_CLASS_ID ehtml
+HTML_STYLE_CLASS_ID /html e XHTML e
+
 HTML head html HEAD headhtml
 XBODY /html html FINAL e
 
-HEAD id head HEAD head
-HEAD class head HEAD head
-HEAD style head HEAD head
+HEAD id= head HEAD_ID ehead
+HEAD_ID /head e XHEAD e
+HEAD_ID class= e HEAD_ID_CLASS ehead
+HEAD_ID_CLASS /head e XHEAD e
+HEAD_ID style= e HEAD_ID_STYLE ehead
+HEAD_ID_STYLE /head e XHEAD e
+HEAD_ID_CLASS style= e HEAD_ID_CLASS_STYLE ehead
+HEAD_ID_CLASS_STYLE /head e XHEAD e
+HEAD_ID_STYLE class= e HEAD_ID_STYLE_CLASS ehead
+HEAD_ID_STYLE_CLASS /head e XHEAD e
+
+HEAD class= head HEAD_CLASS ehead
+HEAD_CLASS /head e XHEAD e 
+HEAD_CLASS id= e HEAD_CLASS_ID ehead
+HEAD_CLASS_ID /head e XHEAD e
+HEAD_CLASS style= e HEAD_CLASS_STYLE ehead
+HEAD_CLASS_STYLE /head e XHEAD e
+HEAD_CLASS_ID style= e HEAD_CLASS_ID_STYLE ehead
+HEAD_CLASS_ID_STYLE /head e XHEAD e
+HEAD_CLASS_STYLE id= e HEAD_CLASS_STYLE_ID ehead
+HEAD_CLASS_STYLE_ID /head e XHEAD e
+
+HEAD style= head HEAD_STYLE ehead
+HEAD_STYLE /head e XHEAD e
+HEAD_STYLE id= e HEAD_STYLE_ID ehead
+HEAD_STYLE_ID /head e XHEAD e
+HEAD_STYLE class= e HEAD_STYLE_CLASS ehead
+HEAD_STYLE_CLASS /head e XHEAD e
+HEAD_STYLE_ID class= e HEAD_STYLE_ID_CLASS ehead
+HEAD_STYLE_ID_CLASS /head e XHEAD e
+HEAD_STYLE_CLASS id= e HEAD_STYLE_CLASS_ID ehead
+HEAD_STYLE_CLASS_ID /head e XHEAD e
+
 HEAD title head TITLE titlehead
 TITLE /title title XTITLE e
 XTITLE /head head XHEAD e
 HEAD script head SCRIPT scripthead
 SCRIPT /script script XSCRIPT e
 XSCRIPT /head head XHEAD e
-SCRIPT src= script SRCSCRIPT src=script
+SCRIPT src= script SRCSCRIPT escript
 
 XSCRIPT /head head XHEAD e
 HEAD link head LINK linkhead
-LINK rel= link LINK rel=link
-LINK href rel= LINK hrefrel=
+LINK rel= link RELLINK elink
+RELLINK href e HREFRELLINK e
 
 HEAD /head head XHEAD e
 XHEAD body html BODY bodyhtml
+XHEAD /html html FINAL e
 
-BODY id body BODY body
-BODY class body BODY body
-BODY style body BODY body
+BODY id= body BODY_ID ebody
+BODY_ID /body e XBODY e
+BODY_ID class= e BODY_ID_CLASS ebody
+BODY_ID_CLASS /body e XBODY e
+BODY_ID style= e BODY_ID_STYLE ebody
+BODY_ID_STYLE /body e XBODY e
+BODY_ID_CLASS style= e BODY_ID_CLASS_STYLE ebody
+BODY_ID_CLASS_STYLE /body e XBODY e
+BODY_ID_STYLE class= e BODY_ID_STYLE_CLASS ebody
+BODY_ID_STYLE_CLASS /body e XBODY e
+
+BODY class= body BODY_CLASS ebody
+BODY_CLASS /body e XBODY e 
+BODY_CLASS id= e BODY_CLASS_ID ebody
+BODY_CLASS_ID /body e XBODY e
+BODY_CLASS style= e BODY_CLASS_STYLE ebody
+BODY_CLASS_STYLE /body e XBODY e
+BODY_CLASS_ID style= e BODY_CLASS_ID_STYLE ebody
+BODY_CLASS_ID_STYLE /body e XBODY e
+BODY_CLASS_STYLE id= e BODY_CLASS_STYLE_ID ebody
+BODY_CLASS_STYLE_ID /body e XBODY e
+
+BODY style= body BODY_STYLE ebody
+BODY_STYLE /body e XBODY e
+BODY_STYLE id= e BODY_STYLE_ID ebody
+BODY_STYLE_ID /body e XBODY e
+BODY_STYLE class= e BODY_STYLE_CLASS ebody
+BODY_STYLE_CLASS /body e XBODY e
+BODY_STYLE_ID class= e BODY_STYLE_ID_CLASS ebody
+BODY_STYLE_ID_CLASS /body e XBODY e
+BODY_STYLE_CLASS id= e BODY_STYLE_CLASS_ID ebody
+BODY_STYLE_CLASS_ID /body e XBODY e
+
 BODY /body body XBODY e
 
 // HANDLING HEADER
+
 BODY h1 body H1 h1body
 H1 /h1 h1 XH1 e
 
@@ -405,13 +498,11 @@ BOLD strong b STRONG strongb
 BOLD small b SMALL smallb
 
 
-
 // ABBR
 
 BODY abbr body ABBR abbrbody
 ABBR /abbr abbr XABBR e
 XABBR /body body XBODY e
-
 
 
 // EM (IN PARAGRAPH)
@@ -420,7 +511,6 @@ ITALIC br em BREAK brem
 ITALIC b em BOLD bem
 ITALIC strong em STRONG strongem
 ITALIC small em SMALL smallem
-
 
 
 // STRONG (IN PARAGRAPH)
@@ -779,7 +869,6 @@ INPUTTYPEEMAIL /input input XINPUT e
 INPUTTYPENUMBER /input input XINPUT e
 INPUTTYPECHECKBOX /input input XINPUT e
 XINPUT /body body XBODY e
-
 
 
 // TABLE

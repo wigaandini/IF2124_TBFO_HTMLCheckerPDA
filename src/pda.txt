@@ -391,7 +391,6 @@ P br p BREAK brp
 BREAK /br br XBREAK e
 
 
-
 // BOLD (IN PARAGRAPH)
 {break di dalam bold}
 BOLD br b BREAK brb

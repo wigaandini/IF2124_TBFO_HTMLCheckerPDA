@@ -645,9 +645,9 @@ FORM id form FORM form
 FORM class form FORM form
 FORM style form FORM form
 
-FORM action= form FORMACTION action=form
-FORM method=post form FORMMETHODPOST method=postform
-FORM method=get form FORMMETHODGET method=getform
+FORM action= form FORMACTION eform
+FORM method="post" form FORMMETHODPOST eform
+FORM method=get form FORMMETHODGET eform
 
 FORMACTION /form form XFORM e
 FORMMETHODPOST /form form XFORM e
@@ -662,11 +662,11 @@ INPUT id input INPUT input
 INPUT class input INPUT input
 INPUT style input INPUT input
 
-INPUT type=text input INPUTTYPETEXT type=textinput
-INPUT type=password input INPUTTYPEPASSWORD type=passwordinput
-INPUT type=email input INPUTTYPEEMAIL type=emailinput
-INPUT type=number input INPUTTYPENUMBER type=numberinput
-INPUT type=checkbox input INPUTTYPECHECKBOX type=checkboxinput
+INPUT type="text" input INPUTTYPETEXT einput
+INPUT type="password" input INPUTTYPEPASSWORD einput
+INPUT type="email" input INPUTTYPEEMAIL einput
+INPUT type="number" input INPUTTYPENUMBER einput
+INPUT type="checkbox" input INPUTTYPECHECKBOX einput
 INPUTTYPETEXT /input input XINPUT e
 INPUTTYPEPASSWORD /input input XINPUT e
 INPUTTYPEEMAIL /input input XINPUT e

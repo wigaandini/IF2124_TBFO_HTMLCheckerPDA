@@ -321,15 +321,69 @@ P strong p STRONG strongp
 STRONG /strong strong XSTRONG e
 XSTRONG /p p XP e
 
+P_ID strong e STRONG strong
+P_ID_CLASS strong e STRONG strong
+P_ID_STYLE strong e STRONG strong
+P_ID_CLASS_STYLE strong e STRONG strong 
+P_ID_STYLE_CLASS strong e STRONG strong
+
+P_CLASS strong e STRONG strong
+P_CLASS_ID strong e STRONG strong
+P_CLASS_STYLE strong e STRONG strong
+P_CLASS_ID_STYLE strong e STRONG strong
+P_CLASS_STYLE_ID strong e STRONG strong
+
+P_STYLE strong e STRONG strong
+P_STYLE_ID strong e STRONG strong
+P_STYLE_CLASS strong e STRONG strong
+P_STYLE_ID_CLASS strong e STRONG strong
+P_STYLE_CLASS_ID strong e STRONG strong
+
 {with em}
 P em p ITALIC emp
 ITALIC /em em XITALIC e
 XITALIC /p p XP e
 
+P_ID em e ITALIC em
+P_ID_CLASS em e ITALIC em
+P_ID_STYLE em e ITALIC em
+P_ID_CLASS_STYLE em e ITALIC em 
+P_ID_STYLE_CLASS em e ITALIC em
+
+P_CLASS em e ITALIC em
+P_CLASS_ID em e ITALIC em
+P_CLASS_STYLE em e ITALIC em
+P_CLASS_ID_STYLE em e ITALIC em
+P_CLASS_STYLE_ID em e ITALIC em
+
+P_STYLE em e ITALIC em
+P_STYLE_ID em e ITALIC em
+P_STYLE_CLASS em e ITALIC em
+P_STYLE_ID_CLASS em e ITALIC em
+P_STYLE_CLASS_ID em e ITALIC em
+
 {with small}
 P small p SMALL smallp
 SMALL /small SMALL XSMALL e
 XSMALL /p p XP e
+
+P_ID small e SMALL small
+P_ID_CLASS small e SMALL small
+P_ID_STYLE small e SMALL small
+P_ID_CLASS_STYLE small e SMALL small 
+P_ID_STYLE_CLASS small e SMALL small
+
+P_CLASS small e SMALL small
+P_CLASS_ID small e SMALL small
+P_CLASS_STYLE small e SMALL small
+P_CLASS_ID_STYLE small e SMALL small
+P_CLASS_STYLE_ID small e SMALL small
+
+P_STYLE small e SMALL small
+P_STYLE_ID small e SMALL small
+P_STYLE_CLASS small e SMALL small
+P_STYLE_ID_CLASS small e SMALL small
+P_STYLE_CLASS_ID small e SMALL small
 
 {br}
 {kasus p (tanpa bold) di breakline}

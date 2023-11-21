@@ -590,12 +590,51 @@ BUTTON_STYLE_ID_CLASS /button e XBUTTON e
 BUTTON_STYLE_CLASS id= e BUTTON_STYLE_CLASS_ID ebutton
 BUTTON_STYLE_CLASS_ID /button e XBUTTON e
 
-BUTTON type=submit button BUTTONTYPESUBMIT type=submitbutton
-BUTTON type=reset button BUTTONTYPERESET type=resetbutton
+BUTTON type="submit" button BUTTONTYPESUBMIT ebutton
+
+BUTTON_ID type="submit" e BUTTONTYPESUBMIT ebutton
+BUTTON_ID_CLASS type="submit" e BUTTONTYPESUBMIT ebutton
+BUTTON_ID_STYLE type="submit" e BUTTONTYPESUBMIT ebutton
+BUTTON_ID_CLASS_STYLE type="submit" e BUTTONTYPESUBMIT ebutton 
+BUTTON_ID_STYLE_CLASS type="submit" e BUTTONTYPESUBMIT ebutton
+
+BUTTON_CLASS type="submit" e BUTTONTYPESUBMIT ebutton
+BUTTON_CLASS_ID type="submit" e BUTTONTYPESUBMIT ebutton
+BUTTON_CLASS_STYLE type="submit" e BUTTONTYPESUBMIT ebutton
+BUTTON_CLASS_ID_STYLE type="submit" e BUTTONTYPESUBMIT ebutton
+BUTTON_CLASS_STYLE_ID type="submit" e BUTTONTYPESUBMIT ebutton
+
+BUTTON_STYLE type="submit" e BUTTONTYPESUBMIT ebutton
+BUTTON_STYLE_ID type="submit" e BUTTONTYPESUBMIT ebutton
+BUTTON_STYLE_CLASS type="submit" e BUTTONTYPESUBMIT ebutton
+BUTTON_STYLE_ID_CLASS type="submit" e BUTTONTYPESUBMIT ebutton
+BUTTON_STYLE_CLASS_ID type="submit" e BUTTONTYPESUBMIT ebutton
+
+BUTTONTYPESUBMIT /button button XBUTTON e
+
+BUTTON type="reset" button BUTTONTYPERESET ebutton
+
+BUTTON_ID type="reset" e BUTTONTYPERESET ebutton
+BUTTON_ID_CLASS type="reset" e BUTTONTYPERESET ebutton
+BUTTON_ID_STYLE type="reset" e BUTTONTYPERESET ebutton
+BUTTON_ID_CLASS_STYLE type="reset" e BUTTONTYPERESET ebutton 
+BUTTON_ID_STYLE_CLASS type="reset" e BUTTONTYPERESET ebutton
+
+BUTTON_CLASS type="reset" e BUTTONTYPERESET ebutton
+BUTTON_CLASS_ID type="reset" e BUTTONTYPERESET ebutton
+BUTTON_CLASS_STYLE type="reset" e BUTTONTYPERESET ebutton
+BUTTON_CLASS_ID_STYLE type="reset" e BUTTONTYPERESET ebutton
+BUTTON_CLASS_STYLE_ID type="reset" e BUTTONTYPERESET ebutton
+
+BUTTON_STYLE type="reset" e BUTTONTYPERESET ebutton
+BUTTON_STYLE_ID type="reset" e BUTTONTYPERESET ebutton
+BUTTON_STYLE_CLASS type="reset" e BUTTONTYPERESET ebutton
+BUTTON_STYLE_ID_CLASS type="reset" e BUTTONTYPERESET ebutton
+BUTTON_STYLE_CLASS_ID type="reset" e BUTTONTYPERESET ebutton
+
+BUTTONTYPERESET /button button XBUTTON e
 
 BUTTONTYPE /button button XBUTTON e
-BUTTONTYPESUBMIT /button button XBUTTON e
-BUTTONTYPERESET /button button XBUTTON e
 XBUTTON /body body XBODY e
 
 

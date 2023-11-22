@@ -1,520 +1,96 @@
-STATE INPUT STACK-BOTTOM NEXT-STATE STACK-NOW
-
 START html Z0 HTML htmlZ0
-
-HTML id= html HTML_ID ehtml
-HTML_ID /html e XHTML e
-HTML_ID class= e HTML_ID_CLASS ehtml
-HTML_ID_CLASS /html e XHTML e
-HTML_ID style= e HTML_ID_STYLE ehtml
-HTML_ID_STYLE /html e XHTML e
-HTML_ID_CLASS style= e HTML_ID_CLASS_STYLE ehtml
-HTML_ID_CLASS_STYLE /html e XHTML e
-HTML_ID_STYLE class= e HTML_ID_STYLE_CLASS ehtml
-HTML_ID_STYLE_CLASS /html e XHTML e
-
-HTML class= html HTML_CLASS ehtml
-HTML_CLASS /html e XHTML e 
-HTML_CLASS id= e HTML_CLASS_ID ehtml
-HTML_CLASS_ID /html e XHTML e
-HTML_CLASS style= e HTML_CLASS_STYLE ehtml
-HTML_CLASS_STYLE /html e XHTML e
-HTML_CLASS_ID style= e HTML_CLASS_ID_STYLE ehtml
-HTML_CLASS_ID_STYLE /html e XHTML e
-HTML_CLASS_STYLE id= e HTML_CLASS_STYLE_ID ehtml
-HTML_CLASS_STYLE_ID /html e XHTML e
-
-HTML style= html HTML_STYLE ehtml
-HTML_STYLE /html e XHTML e
-HTML_STYLE id= e HTML_STYLE_ID ehtml
-HTML_STYLE_ID /html e XHTML e
-HTML_STYLE class= e HTML_STYLE_CLASS ehtml
-HTML_STYLE_CLASS /html e XHTML e
-HTML_STYLE_ID class= e HTML_STYLE_ID_CLASS ehtml
-HTML_STYLE_ID_CLASS /html e XHTML e
-HTML_STYLE_CLASS id= e HTML_STYLE_CLASS_ID ehtml
-HTML_STYLE_CLASS_ID /html e XHTML e
-
+HTML id= html HTML ehtml
+HTML class= html HTML ehtml
+HTML style= html HTML ehtml
 HTML head html HEAD headhtml
 XBODY /html html FINAL e
-
-HEAD id= head HEAD_ID ehead
-HEAD_ID /head e XHEAD e
-HEAD_ID class= e HEAD_ID_CLASS ehead
-HEAD_ID_CLASS /head e XHEAD e
-HEAD_ID style= e HEAD_ID_STYLE ehead
-HEAD_ID_STYLE /head e XHEAD e
-HEAD_ID_CLASS style= e HEAD_ID_CLASS_STYLE ehead
-HEAD_ID_CLASS_STYLE /head e XHEAD e
-HEAD_ID_STYLE class= e HEAD_ID_STYLE_CLASS ehead
-HEAD_ID_STYLE_CLASS /head e XHEAD e
-
-HEAD class= head HEAD_CLASS ehead
-HEAD_CLASS /head e XHEAD e 
-HEAD_CLASS id= e HEAD_CLASS_ID ehead
-HEAD_CLASS_ID /head e XHEAD e
-HEAD_CLASS style= e HEAD_CLASS_STYLE ehead
-HEAD_CLASS_STYLE /head e XHEAD e
-HEAD_CLASS_ID style= e HEAD_CLASS_ID_STYLE ehead
-HEAD_CLASS_ID_STYLE /head e XHEAD e
-HEAD_CLASS_STYLE id= e HEAD_CLASS_STYLE_ID ehead
-HEAD_CLASS_STYLE_ID /head e XHEAD e
-
-HEAD style= head HEAD_STYLE ehead
-HEAD_STYLE /head e XHEAD e
-HEAD_STYLE id= e HEAD_STYLE_ID ehead
-HEAD_STYLE_ID /head e XHEAD e
-HEAD_STYLE class= e HEAD_STYLE_CLASS ehead
-HEAD_STYLE_CLASS /head e XHEAD e
-HEAD_STYLE_ID class= e HEAD_STYLE_ID_CLASS ehead
-HEAD_STYLE_ID_CLASS /head e XHEAD e
-HEAD_STYLE_CLASS id= e HEAD_STYLE_CLASS_ID ehead
-HEAD_STYLE_CLASS_ID /head e XHEAD e
-
+HEAD id= head HEAD ehead
+HEAD class= head HEAD ehead
+HEAD style= head HEAD ehead
 HEAD title head TITLE titlehead
 TITLE /title title XTITLE e
 XTITLE /head head XHEAD e
 HEAD script head SCRIPT scripthead
 SCRIPT /script script XSCRIPT e
 XSCRIPT /head head XHEAD e
-SCRIPT src= script SRCSCRIPT escript
-
+SCRIPT src= script SCRIPT escript
 XSCRIPT /head head XHEAD e
 HEAD link head LINK linkhead
-LINK rel= link RELLINK elink
-RELLINK href e HREFRELLINK e
-
-HEAD /head head XHEAD e
+HEAD </head> <head> XHEAD e
 XHEAD body html BODY bodyhtml
 XHEAD /html html FINAL e
-
-BODY id= body BODY_ID ebody
-BODY_ID /body e XBODY e
-BODY_ID class= e BODY_ID_CLASS ebody
-BODY_ID_CLASS /body e XBODY e
-BODY_ID style= e BODY_ID_STYLE ebody
-BODY_ID_STYLE /body e XBODY e
-BODY_ID_CLASS style= e BODY_ID_CLASS_STYLE ebody
-BODY_ID_CLASS_STYLE /body e XBODY e
-BODY_ID_STYLE class= e BODY_ID_STYLE_CLASS ebody
-BODY_ID_STYLE_CLASS /body e XBODY e
-
-BODY class= body BODY_CLASS ebody
-BODY_CLASS /body e XBODY e 
-BODY_CLASS id= e BODY_CLASS_ID ebody
-BODY_CLASS_ID /body e XBODY e
-BODY_CLASS style= e BODY_CLASS_STYLE ebody
-BODY_CLASS_STYLE /body e XBODY e
-BODY_CLASS_ID style= e BODY_CLASS_ID_STYLE ebody
-BODY_CLASS_ID_STYLE /body e XBODY e
-BODY_CLASS_STYLE id= e BODY_CLASS_STYLE_ID ebody
-BODY_CLASS_STYLE_ID /body e XBODY e
-
-BODY style= body BODY_STYLE ebody
-BODY_STYLE /body e XBODY e
-BODY_STYLE id= e BODY_STYLE_ID ebody
-BODY_STYLE_ID /body e XBODY e
-BODY_STYLE class= e BODY_STYLE_CLASS ebody
-BODY_STYLE_CLASS /body e XBODY e
-BODY_STYLE_ID class= e BODY_STYLE_ID_CLASS ebody
-BODY_STYLE_ID_CLASS /body e XBODY e
-BODY_STYLE_CLASS id= e BODY_STYLE_CLASS_ID ebody
-BODY_STYLE_CLASS_ID /body e XBODY e
-
+BODY id= body BODY ebody
+BODY class= body BODY ebody
+BODY style= body BODY ebody
 BODY /body body XBODY e
-
 BODY h1 body H1 h1body
 H1 /h1 h1 XH1 e
-
-H1 id= h1 H1_ID eh1
-H1_ID /h1 e XH1 e
-H1_ID class= e H1_ID_CLASS eh1
-H1_ID_CLASS /h1 e XH1 e
-H1_ID style= e H1_ID_STYLE eh1
-H1_ID_STYLE /h1 e XH1 e
-H1_ID_CLASS style= e H1_ID_CLASS_STYLE eh1
-H1_ID_CLASS_STYLE /h1 e XH1 e
-H1_ID_STYLE class= e H1_ID_STYLE_CLASS eh1
-H1_ID_STYLE_CLASS /h1 e XH1 e
-
-H1 class= h1 H1_CLASS eh1
-H1_CLASS /h1 e XH1 e 
-H1_CLASS id= e H1_CLASS_ID eh1
-H1_CLASS_ID /h1 e XH1 e
-H1_CLASS style= e H1_CLASS_STYLE eh1
-H1_CLASS_STYLE /h1 e XH1 e
-H1_CLASS_ID style= e H1_CLASS_ID_STYLE eh1
-H1_CLASS_ID_STYLE /h1 e XH1 e
-H1_CLASS_STYLE id= e H1_CLASS_STYLE_ID eh1
-H1_CLASS_STYLE_ID /h1 e XH1 e
-
-H1 style= h1 H1_STYLE eh1
-H1_STYLE /h1 e XH1 e
-H1_STYLE id= e H1_STYLE_ID eh1
-H1_STYLE_ID /h1 e XH1 e
-H1_STYLE class= e H1_STYLE_CLASS eh1
-H1_STYLE_CLASS /h1 e XH1 e
-H1_STYLE_ID class= e H1_STYLE_ID_CLASS eh1
-H1_STYLE_ID_CLASS /h1 e XH1 e
-H1_STYLE_CLASS id= e H1_STYLE_CLASS_ID eh1
-H1_STYLE_CLASS_ID /h1 e XH1 e
-
+H1 id= h1 H1 eh1
+H1 class= h1 H1 eh1
+H1 style= h1 H1 eh1
 BODY h2 body H2 h2body
 H2 /h2 h2 XH2 e
-
-H2 id= h2 H2_ID eh2
-H2_ID /h2 e XH2 e
-H2_ID class= e H2_ID_CLASS eh2
-H2_ID_CLASS /h2 e XH2 e
-H2_ID style= e H2_ID_STYLE eh2
-H2_ID_STYLE /h2 e XH2 e
-H2_ID_CLASS style= e H2_ID_CLASS_STYLE eh2
-H2_ID_CLASS_STYLE /h2 e XH2 e
-H2_ID_STYLE class= e H2_ID_STYLE_CLASS eh2
-H2_ID_STYLE_CLASS /h2 e XH2 e
-
-H2 class= h2 H2_CLASS eh2
-H2_CLASS /h2 e XH2 e 
-H2_CLASS id= e H2_CLASS_ID eh2
-H2_CLASS_ID /h2 e XH2 e
-H2_CLASS style= e H2_CLASS_STYLE eh2
-H2_CLASS_STYLE /h2 e XH2 e
-H2_CLASS_ID style= e H2_CLASS_ID_STYLE eh2
-H2_CLASS_ID_STYLE /h2 e XH2 e
-H2_CLASS_STYLE id= e H2_CLASS_STYLE_ID eh2
-H2_CLASS_STYLE_ID /h2 e XH2 e
-
-H2 style= h2 H2_STYLE eh2
-H2_STYLE /h2 e XH2 e
-H2_STYLE id= e H2_STYLE_ID eh2
-H2_STYLE_ID /h2 e XH2 e
-H2_STYLE class= e H2_STYLE_CLASS eh2
-H2_STYLE_CLASS /h2 e XH2 e
-H2_STYLE_ID class= e H2_STYLE_ID_CLASS eh2
-H2_STYLE_ID_CLASS /h2 e XH2 e
-H2_STYLE_CLASS id= e H2_STYLE_CLASS_ID eh2
-H2_STYLE_CLASS_ID /h2 e XH2 e
-
+H2 id= h2 H2 eh2
+H2 class= h2 H2 eh2
+H2 style= h2 H2 eh2
 BODY h3 body H3 h3body
 H3 /h3 h3 XH3 e
-
-H3 id= h3 H3_ID eh3
-H3_ID /h3 e XH3 e
-H3_ID class= e H3_ID_CLASS eh3
-H3_ID_CLASS /h3 e XH3 e
-H3_ID style= e H3_ID_STYLE eh3
-H3_ID_STYLE /h3 e XH3 e
-H3_ID_CLASS style= e H3_ID_CLASS_STYLE eh3
-H3_ID_CLASS_STYLE /h3 e XH3 e
-H3_ID_STYLE class= e H3_ID_STYLE_CLASS eh3
-H3_ID_STYLE_CLASS /h3 e XH3 e
-
-H3 class= h3 H3_CLASS eh3
-H3_CLASS /h3 e XH3 e 
-H3_CLASS id= e H3_CLASS_ID eh3
-H3_CLASS_ID /h3 e XH3 e
-H3_CLASS style= e H3_CLASS_STYLE eh3
-H3_CLASS_STYLE /h3 e XH3 e
-H3_CLASS_ID style= e H3_CLASS_ID_STYLE eh3
-H3_CLASS_ID_STYLE /h3 e XH3 e
-H3_CLASS_STYLE id= e H3_CLASS_STYLE_ID eh3
-H3_CLASS_STYLE_ID /h3 e XH3 e
-
-H3 style= h3 H3_STYLE eh3
-H3_STYLE /h3 e XH3 e
-H3_STYLE id= e H3_STYLE_ID eh3
-H3_STYLE_ID /h3 e XH3 e
-H3_STYLE class= e H3_STYLE_CLASS eh3
-H3_STYLE_CLASS /h3 e XH3 e
-H3_STYLE_ID class= e H3_STYLE_ID_CLASS eh3
-H3_STYLE_ID_CLASS /h3 e XH3 e
-H3_STYLE_CLASS id= e H3_STYLE_CLASS_ID eh3
-H3_STYLE_CLASS_ID /h3 e XH3 e
-
+H3 id= h3 H3 eh3
+H3 class= h3 H3 eh3
+H3 style= h3 H3 eh3
 BODY h4 body H4 h4body
 H4 /h4 h4 XH4 e
-
-H4 id= h4 H4_ID eh4
-H4_ID /h4 e XH4 e
-H4_ID class= e H4_ID_CLASS eh4
-H4_ID_CLASS /h4 e XH4 e
-H4_ID style= e H4_ID_STYLE eh4
-H4_ID_STYLE /h4 e XH4 e
-H4_ID_CLASS style= e H4_ID_CLASS_STYLE eh4
-H4_ID_CLASS_STYLE /h4 e XH4 e
-H4_ID_STYLE class= e H4_ID_STYLE_CLASS eh4
-H4_ID_STYLE_CLASS /h4 e XH4 e
-
-H4 class= h4 H4_CLASS eh4
-H4_CLASS /h4 e XH4 e 
-H4_CLASS id= e H4_CLASS_ID eh4
-H4_CLASS_ID /h4 e XH4 e
-H4_CLASS style= e H4_CLASS_STYLE eh4
-H4_CLASS_STYLE /h4 e XH4 e
-H4_CLASS_ID style= e H4_CLASS_ID_STYLE eh4
-H4_CLASS_ID_STYLE /h4 e XH4 e
-H4_CLASS_STYLE id= e H4_CLASS_STYLE_ID eh4
-H4_CLASS_STYLE_ID /h4 e XH4 e
-
-H4 style= h4 H4_STYLE eh4
-H4_STYLE /h4 e XH4 e
-H4_STYLE id= e H4_STYLE_ID eh4
-H4_STYLE_ID /h4 e XH4 e
-H4_STYLE class= e H4_STYLE_CLASS eh4
-H4_STYLE_CLASS /h4 e XH4 e
-H4_STYLE_ID class= e H4_STYLE_ID_CLASS eh4
-H4_STYLE_ID_CLASS /h4 e XH4 e
-H4_STYLE_CLASS id= e H4_STYLE_CLASS_ID eh4
-H4_STYLE_CLASS_ID /h4 e XH4 e
-
+H4 id= h4 H4 eh4
+H4 class= h4 H4 eh4
+H4 style= h4 H4 eh4
 BODY h5 body H5 h5body
 H5 /h5 h5 XH5 e
-
-H5 id= h5 H5_ID eh5
-H5_ID /h5 e XH5 e
-H5_ID class= e H5_ID_CLASS eh5
-H5_ID_CLASS /h5 e XH5 e
-H5_ID style= e H5_ID_STYLE eh5
-H5_ID_STYLE /h5 e XH5 e
-H5_ID_CLASS style= e H5_ID_CLASS_STYLE eh5
-H5_ID_CLASS_STYLE /h5 e XH5 e
-H5_ID_STYLE class= e H5_ID_STYLE_CLASS eh5
-H5_ID_STYLE_CLASS /h5 e XH5 e
-
-H5 class= h5 H5_CLASS eh5
-H5_CLASS /h5 e XH5 e 
-H5_CLASS id= e H5_CLASS_ID eh5
-H5_CLASS_ID /h5 e XH5 e
-H5_CLASS style= e H5_CLASS_STYLE eh5
-H5_CLASS_STYLE /h5 e XH5 e
-H5_CLASS_ID style= e H5_CLASS_ID_STYLE eh5
-H5_CLASS_ID_STYLE /h5 e XH5 e
-H5_CLASS_STYLE id= e H5_CLASS_STYLE_ID eh5
-H5_CLASS_STYLE_ID /h5 e XH5 e
-
-H5 style= h5 H5_STYLE eh5
-H5_STYLE /h5 e XH5 e
-H5_STYLE id= e H5_STYLE_ID eh5
-H5_STYLE_ID /h5 e XH5 e
-H5_STYLE class= e H5_STYLE_CLASS eh5
-H5_STYLE_CLASS /h5 e XH5 e
-H5_STYLE_ID class= e H5_STYLE_ID_CLASS eh5
-H5_STYLE_ID_CLASS /h5 e XH5 e
-H5_STYLE_CLASS id= e H5_STYLE_CLASS_ID eh5
-H5_STYLE_CLASS_ID /h5 e XH5 e
-
+H5 id= h5 H5 eh5
+H5 class= h5 H5 eh5
+H5 style= h5 H5 eh5
 BODY h6 body H6 h6body
 H6 /h6 h6 XH6 e
-
-H6 id= h6 H6_ID eh6
-H6_ID /h6 e XH6 e
-H6_ID class= e H6_ID_CLASS eh6
-H6_ID_CLASS /h6 e XH6 e
-H6_ID style= e H6_ID_STYLE eh6
-H6_ID_STYLE /h6 e XH6 e
-H6_ID_CLASS style= e H6_ID_CLASS_STYLE eh6
-H6_ID_CLASS_STYLE /h6 e XH6 e
-H6_ID_STYLE class= e H6_ID_STYLE_CLASS eh6
-H6_ID_STYLE_CLASS /h6 e XH6 e
-
-H6 class= h6 H6_CLASS eh6
-H6_CLASS /h6 e XH6 e 
-H6_CLASS id= e H6_CLASS_ID eh6
-H6_CLASS_ID /h6 e XH6 e
-H6_CLASS style= e H6_CLASS_STYLE eh6
-H6_CLASS_STYLE /h6 e XH6 e
-H6_CLASS_ID style= e H6_CLASS_ID_STYLE eh6
-H6_CLASS_ID_STYLE /h6 e XH6 e
-H6_CLASS_STYLE id= e H6_CLASS_STYLE_ID eh6
-H6_CLASS_STYLE_ID /h6 e XH6 e
-
-H6 style= h6 H6_STYLE eh6
-H6_STYLE /h6 e XH6 e
-H6_STYLE id= e H6_STYLE_ID eh6
-H6_STYLE_ID /h6 e XH6 e
-H6_STYLE class= e H6_STYLE_CLASS eh6
-H6_STYLE_CLASS /h6 e XH6 e
-H6_STYLE_ID class= e H6_STYLE_ID_CLASS eh6
-H6_STYLE_ID_CLASS /h6 e XH6 e
-H6_STYLE_CLASS id= e H6_STYLE_CLASS_ID eh6
-H6_STYLE_CLASS_ID /h6 e XH6 e
-
-
+H6 id= h6 H6 eh6
+H6 class= h6 H6 eh6
+H6 style= h6 H6 eh6
 BODY p body P pbody
 P /p p XP e
-
-P id= p P_ID ep
-P_ID /p e XP e
-P_ID class= e P_ID_CLASS ep
-P_ID_CLASS /p e XP e
-P_ID style= e P_ID_STYLE ep
-P_ID_STYLE /p e XP e
-P_ID_CLASS style= e P_ID_CLASS_STYLE ep
-P_ID_CLASS_STYLE /p e XP e
-P_ID_STYLE class= e P_ID_STYLE_CLASS ep
-P_ID_STYLE_CLASS /p e XP e
-
-P class= p P_CLASS ep
-P_CLASS /p e XP e 
-P_CLASS id= e P_CLASS_ID ep
-P_CLASS_ID /p e XP e
-P_CLASS style= e P_CLASS_STYLE ep
-P_CLASS_STYLE /p e XP e
-P_CLASS_ID style= e P_CLASS_ID_STYLE ep
-P_CLASS_ID_STYLE /p e XP e
-P_CLASS_STYLE id= e P_CLASS_STYLE_ID ep
-P_CLASS_STYLE_ID /p e XP e
-
-P style= p P_STYLE ep
-P_STYLE /p e XP e
-P_STYLE id= e P_STYLE_ID ep
-P_STYLE_ID /p e XP e
-P_STYLE class= e P_STYLE_CLASS ep
-P_STYLE_CLASS /p e XP e
-P_STYLE_ID class= e P_STYLE_ID_CLASS ep
-P_STYLE_ID_CLASS /p e XP e
-P_STYLE_CLASS id= e P_STYLE_CLASS_ID ep
-P_STYLE_CLASS_ID /p e XP e
-
+P id= p P ep
+P class= p P ep
+P style= p P ep
 P b p BOLD bp
 BOLD /b b XBOLD e
 XBOLD /p p XP e
-
-P_ID b e BOLD b
-P_ID_CLASS b e BOLD b
-P_ID_STYLE b e BOLD b
-P_ID_CLASS_STYLE b e BOLD b 
-P_ID_STYLE_CLASS b e BOLD b
-
-P_CLASS b e BOLD b
-P_CLASS_ID b e BOLD b
-P_CLASS_STYLE b e BOLD b
-P_CLASS_ID_STYLE b e BOLD b
-P_CLASS_STYLE_ID b e BOLD b
-
-P_STYLE b e BOLD b
-P_STYLE_ID b e BOLD b
-P_STYLE_CLASS b e BOLD b
-P_STYLE_ID_CLASS b e BOLD b
-P_STYLE_CLASS_ID b e BOLD b
-
 P strong p STRONG strongp
 STRONG /strong strong XSTRONG e
 XSTRONG /p p XP e
-
-P_ID strong e STRONG strong
-P_ID_CLASS strong e STRONG strong
-P_ID_STYLE strong e STRONG strong
-P_ID_CLASS_STYLE strong e STRONG strong 
-P_ID_STYLE_CLASS strong e STRONG strong
-
-P_CLASS strong e STRONG strong
-P_CLASS_ID strong e STRONG strong
-P_CLASS_STYLE strong e STRONG strong
-P_CLASS_ID_STYLE strong e STRONG strong
-P_CLASS_STYLE_ID strong e STRONG strong
-
-P_STYLE strong e STRONG strong
-P_STYLE_ID strong e STRONG strong
-P_STYLE_CLASS strong e STRONG strong
-P_STYLE_ID_CLASS strong e STRONG strong
-P_STYLE_CLASS_ID strong e STRONG strong
-
 P em p ITALIC emp
 ITALIC /em em XITALIC e
 XITALIC /p p XP e
-
-P_ID em e ITALIC em
-P_ID_CLASS em e ITALIC em
-P_ID_STYLE em e ITALIC em
-P_ID_CLASS_STYLE em e ITALIC em 
-P_ID_STYLE_CLASS em e ITALIC em
-
-P_CLASS em e ITALIC em
-P_CLASS_ID em e ITALIC em
-P_CLASS_STYLE em e ITALIC em
-P_CLASS_ID_STYLE em e ITALIC em
-P_CLASS_STYLE_ID em e ITALIC em
-
-P_STYLE em e ITALIC em
-P_STYLE_ID em e ITALIC em
-P_STYLE_CLASS em e ITALIC em
-P_STYLE_ID_CLASS em e ITALIC em
-P_STYLE_CLASS_ID em e ITALIC em
-
 P small p SMALL smallp
-SMALL /small SMALL XSMALL e
+SMALL /small small XSMALL e
 XSMALL /p p XP e
-
-P_ID small e SMALL small
-P_ID_CLASS small e SMALL small
-P_ID_STYLE small e SMALL small
-P_ID_CLASS_STYLE small e SMALL small 
-P_ID_STYLE_CLASS small e SMALL small
-
-P_CLASS small e SMALL small
-P_CLASS_ID small e SMALL small
-P_CLASS_STYLE small e SMALL small
-P_CLASS_ID_STYLE small e SMALL small
-P_CLASS_STYLE_ID small e SMALL small
-
-P_STYLE small e SMALL small
-P_STYLE_ID small e SMALL small
-P_STYLE_CLASS small e SMALL small
-P_STYLE_ID_CLASS small e SMALL small
-P_STYLE_CLASS_ID small e SMALL small
-
 P br p BREAK brp
 BREAK /br br XBREAK e
-
-P_ID br e BREAK br
-P_ID_CLASS br e BREAK br
-P_ID_STYLE br e BREAK br
-P_ID_CLASS_STYLE br e BREAK br 
-P_ID_STYLE_CLASS br e BREAK br
-
-P_CLASS br e BREAK br
-P_CLASS_ID br e BREAK br
-P_CLASS_STYLE br e BREAK br
-P_CLASS_ID_STYLE br e BREAK br
-P_CLASS_STYLE_ID br e BREAK br
-
-P_STYLE br e BREAK br
-P_STYLE_ID br e BREAK br
-P_STYLE_CLASS br e BREAK br
-P_STYLE_ID_CLASS br e BREAK br
-P_STYLE_CLASS_ID br e BREAK br
-
-
 BOLD br b BREAK brb
 BOLD em b ITALIC emb
 BOLD strong b STRONG strongb
 BOLD small b SMALL smallb
-
-
 BODY abbr body ABBR abbrbody
 ABBR /abbr abbr XABBR e
 XABBR /body body XBODY e
-
-
 ITALIC br em BREAK brem
 ITALIC b em BOLD bem
 ITALIC strong em STRONG strongem
 ITALIC small em SMALL smallem
-
-
 STRONG br strong BREAK brstrong
 STRONG b strong BOLD bstrong
 STRONG em strong ITALIC emstrong
 STRONG small strong SMALL smallstrong
-
-
 SMALL br small BREAK brsmall
 SMALL b small BOLD bsmall
 SMALL em small ITALIC emsmall
 SMALL strong small STRONG strongsmall
-
-
 BODY hr body BODY body 
 H1 hr h1 H1 h1
 H2 hr h2 H2 h2
@@ -530,14 +106,11 @@ XH5 hr e XH5 e
 XH6 hr e XH6 e
 P hr p P p 
 XP hr e P e
-
-
 BODY div body DIV divbody
-DIV id div DIV div
-DIV class div DIV div
-DIV style div DIV div
+DIV id= div DIV ediv
+DIV class= div DIV ediv
+DIV style= div DIV ediv
 DIV /div div XDIV e
-
 DIV p div P divp
 DIV h1 div H1 divh1
 DIV h2 div H2 divh2
@@ -552,359 +125,66 @@ DIV strong div STRONG divstrong
 DIV em div ITALIC divitalic
 DIV small div SMALL divsmall
 DIV b div BOLD divbold
-
 DIV div div DIV divdiv
 DIV /div div DIV div
-
-
 BODY img body IMG imgbody
-IMG src= img IMGSRC src=img
-IMGSRC /img img XIMG e
+IMG src= img IMG eimg
+IMG /img img XIMG e
 XIMG /body body XBODY e
-
-
 HEAD link head LINK linkhead
-LINK rel= link LINK rel=link
-LINK href rel= LINK hrefrel=
+LINK rel= link LINK elink
+LINK href rel= LINK elink
 LINK /link link XLINK e
 XLINK /head head XHEAD e
-
-
 BODY a body A abody
-A href= a AHREF href=a
-AHREF /a a XA e
+A href= a A a
+A /a a XA e
 XA /body body XBODY e
-
-
 BODY button body BUTTON buttonbody
-BUTTON id button BUTTON button
-BUTTON class button BUTTON button
-BUTTON style button BUTTON button
+BUTTON id= button BUTTON ebutton
+BUTTON class= button BUTTON ebutton
+BUTTON style= button BUTTON ebutton
 BUTTON /button button XBUTTON e
-
-BUTTON id= button BUTTON_ID ebutton
-BUTTON_ID /button e XBUTTON e
-BUTTON_ID class= e BUTTON_ID_CLASS ebutton
-BUTTON_ID_CLASS /button e XBUTTON e
-BUTTON_ID style= e BUTTON_ID_STYLE ebutton
-BUTTON_ID_STYLE /button e XBUTTON e
-BUTTON_ID_CLASS style= e BUTTON_ID_CLASS_STYLE ebutton
-BUTTON_ID_CLASS_STYLE /button e XBUTTON e
-BUTTON_ID_STYLE class= e BUTTON_ID_STYLE_CLASS ebutton
-BUTTON_ID_STYLE_CLASS /button e XBUTTON e
-
-BUTTON class= button BUTTON_CLASS ebutton
-BUTTON_CLASS /button e XBUTTON e 
-BUTTON_CLASS id= e BUTTON_CLASS_ID ebutton
-BUTTON_CLASS_ID /button e XBUTTON e
-BUTTON_CLASS style= e BUTTON_CLASS_STYLE ebutton
-BUTTON_CLASS_STYLE /button e XBUTTON e
-BUTTON_CLASS_ID style= e BUTTON_CLASS_ID_STYLE ebutton
-BUTTON_CLASS_ID_STYLE /button e XBUTTON e
-BUTTON_CLASS_STYLE id= e BUTTON_CLASS_STYLE_ID ebutton
-BUTTON_CLASS_STYLE_ID /button e XBUTTON e
-
-BUTTON style= button BUTTON_STYLE ebutton
-BUTTON_STYLE /button e XBUTTON e
-BUTTON_STYLE id= e BUTTON_STYLE_ID ebutton
-BUTTON_STYLE_ID /button e XBUTTON e
-BUTTON_STYLE class= e BUTTON_STYLE_CLASS ebutton
-BUTTON_STYLE_CLASS /button e XBUTTON e
-BUTTON_STYLE_ID class= e BUTTON_STYLE_ID_CLASS ebutton
-BUTTON_STYLE_ID_CLASS /button e XBUTTON e
-BUTTON_STYLE_CLASS id= e BUTTON_STYLE_CLASS_ID ebutton
-BUTTON_STYLE_CLASS_ID /button e XBUTTON e
-
 BUTTON type="submit" button BUTTONTYPESUBMIT ebutton
-
-BUTTON_ID type="submit" e BUTTONTYPESUBMIT ebutton
-BUTTON_ID_CLASS type="submit" e BUTTONTYPESUBMIT ebutton
-BUTTON_ID_STYLE type="submit" e BUTTONTYPESUBMIT ebutton
-BUTTON_ID_CLASS_STYLE type="submit" e BUTTONTYPESUBMIT ebutton 
-BUTTON_ID_STYLE_CLASS type="submit" e BUTTONTYPESUBMIT ebutton
-
-BUTTON_CLASS type="submit" e BUTTONTYPESUBMIT ebutton
-BUTTON_CLASS_ID type="submit" e BUTTONTYPESUBMIT ebutton
-BUTTON_CLASS_STYLE type="submit" e BUTTONTYPESUBMIT ebutton
-BUTTON_CLASS_ID_STYLE type="submit" e BUTTONTYPESUBMIT ebutton
-BUTTON_CLASS_STYLE_ID type="submit" e BUTTONTYPESUBMIT ebutton
-
-BUTTON_STYLE type="submit" e BUTTONTYPESUBMIT ebutton
-BUTTON_STYLE_ID type="submit" e BUTTONTYPESUBMIT ebutton
-BUTTON_STYLE_CLASS type="submit" e BUTTONTYPESUBMIT ebutton
-BUTTON_STYLE_ID_CLASS type="submit" e BUTTONTYPESUBMIT ebutton
-BUTTON_STYLE_CLASS_ID type="submit" e BUTTONTYPESUBMIT ebutton
-
 BUTTONTYPESUBMIT /button button XBUTTON e
-
 BUTTON type="reset" button BUTTONTYPERESET ebutton
-
-BUTTON_ID type="reset" e BUTTONTYPERESET ebutton
-BUTTON_ID_CLASS type="reset" e BUTTONTYPERESET ebutton
-BUTTON_ID_STYLE type="reset" e BUTTONTYPERESET ebutton
-BUTTON_ID_CLASS_STYLE type="reset" e BUTTONTYPERESET ebutton 
-BUTTON_ID_STYLE_CLASS type="reset" e BUTTONTYPERESET ebutton
-
-BUTTON_CLASS type="reset" e BUTTONTYPERESET ebutton
-BUTTON_CLASS_ID type="reset" e BUTTONTYPERESET ebutton
-BUTTON_CLASS_STYLE type="reset" e BUTTONTYPERESET ebutton
-BUTTON_CLASS_ID_STYLE type="reset" e BUTTONTYPERESET ebutton
-BUTTON_CLASS_STYLE_ID type="reset" e BUTTONTYPERESET ebutton
-
-BUTTON_STYLE type="reset" e BUTTONTYPERESET ebutton
-BUTTON_STYLE_ID type="reset" e BUTTONTYPERESET ebutton
-BUTTON_STYLE_CLASS type="reset" e BUTTONTYPERESET ebutton
-BUTTON_STYLE_ID_CLASS type="reset" e BUTTONTYPERESET ebutton
-BUTTON_STYLE_CLASS_ID type="reset" e BUTTONTYPERESET ebutton
-
 BUTTONTYPERESET /button button XBUTTON e
-
 BUTTONTYPE /button button XBUTTON e
 XBUTTON /body body XBODY e
-
-
 BODY form body FORM formbody
+FORM id= form FORM eform
+FORM class= form FORM eform
+FORM style= form FORM eform
 FORM /form form XFORM e
-
-FORM id= form FORM_ID eform
-FORM_ID /form e XFORM e
-FORM_ID class= e FORM_ID_CLASS eform
-FORM_ID_CLASS /form e XFORM e
-FORM_ID style= e FORM_ID_STYLE eform
-FORM_ID_STYLE /form e XFORM e
-FORM_ID_CLASS style= e FORM_ID_CLASS_STYLE eform
-FORM_ID_CLASS_STYLE /form e XFORM e
-FORM_ID_STYLE class= e FORM_ID_STYLE_CLASS eform
-FORM_ID_STYLE_CLASS /form e XFORM e
-
-FORM class= form FORM_CLASS eform
-FORM_CLASS /form e XFORM e 
-FORM_CLASS id= e FORM_CLASS_ID eform
-FORM_CLASS_ID /form e XFORM e
-FORM_CLASS style= e FORM_CLASS_STYLE eform
-FORM_CLASS_STYLE /form e XFORM e
-FORM_CLASS_ID style= e FORM_CLASS_ID_STYLE eform
-FORM_CLASS_ID_STYLE /form e XFORM e
-FORM_CLASS_STYLE id= e FORM_CLASS_STYLE_ID eform
-FORM_CLASS_STYLE_ID /form e XFORM e
-
-FORM style= form FORM_STYLE eform
-FORM_STYLE /form e XFORM e
-FORM_STYLE id= e FORM_STYLE_ID eform
-FORM_STYLE_ID /form e XFORM e
-FORM_STYLE class= e FORM_STYLE_CLASS eform
-FORM_STYLE_CLASS /form e XFORM e
-FORM_STYLE_ID class= e FORM_STYLE_ID_CLASS eform
-FORM_STYLE_ID_CLASS /form e XFORM e
-FORM_STYLE_CLASS id= e FORM_STYLE_CLASS_ID eform
-FORM_STYLE_CLASS_ID /form e XFORM e
-
 FORM action= form FORMACTION eform
-
-FORM_ID action= e FORMACTION e
-FORM_ID_CLASS action= e FORMACTION e
-FORM_ID_STYLE action= e FORMACTION e
-FORM_ID_CLASS_STYLE action= e FORMACTION e
-FORM_ID_STYLE_CLASS action= e FORMACTION e
-
-FORM_CLASS action= e FORMACTION e 
-FORM_CLASS_ID action= e FORMACTION e
-FORM_CLASS_STYLE action= e FORMACTION e
-FORM_CLASS_ID_STYLE action= e FORMACTION e
-FORM_CLASS_STYLE_ID action= e FORMACTION e
-
-FORM_STYLE action= e FORMACTION e 
-FORM_STYLE_ID action= e FORMACTION e 
-FORM_STYLE_CLASS action= e FORMACTION e 
-FORM_STYLE_ID_CLASS action= e FORMACTION e 
-FORM_STYLE_CLASS_ID action= e FORMACTION e 
-
-FORM method="post" form FORMMETHODPOST eform
-
-FORM_ID method="post" e FORMMETHODPOST e
-FORM_ID_CLASS method="post" e FORMMETHODPOST e
-FORM_ID_STYLE method="post" e FORMMETHODPOST e
-FORM_ID_CLASS_STYLE method="post" e FORMMETHODPOST e
-FORM_ID_STYLE_CLASS method="post" e FORMMETHODPOST e
-
-FORM_CLASS method="post" e FORMMETHODPOST e 
-FORM_CLASS_ID method="post" e FORMMETHODPOST e
-FORM_CLASS_STYLE method="post" e FORMMETHODPOST e
-FORM_CLASS_ID_STYLE method="post" e FORMMETHODPOST e
-FORM_CLASS_STYLE_ID method="post" e FORMMETHODPOST e
-
-FORM_STYLE method="post" e FORMMETHODPOST e 
-FORM_STYLE_ID method="post" e FORMMETHODPOST e 
-FORM_STYLE_CLASS method="post" e FORMMETHODPOST e 
-FORM_STYLE_ID_CLASS method="post" e FORMMETHODPOST e 
-FORM_STYLE_CLASS_ID method="post" e FORMMETHODPOST e 
-
-FORM method="get" form FORMMETHODGET eform
-
-FORM_ID method="get" e FORMMETHODGET e
-FORM_ID_CLASS method="get" e FORMMETHODGET e
-FORM_ID_STYLE method="get" e FORMMETHODGET e
-FORM_ID_CLASS_STYLE method="get" e FORMMETHODGET e
-FORM_ID_STYLE_CLASS method="get" e FORMMETHODGET e
-
-FORM_CLASS method="get" e FORMMETHODGET e 
-FORM_CLASS_ID method="get" e FORMMETHODGET e
-FORM_CLASS_STYLE method="get" e FORMMETHODGET e
-FORM_CLASS_ID_STYLE method="get" e FORMMETHODGET e
-FORM_CLASS_STYLE_ID method="get" e FORMMETHODGET e
-
-FORM_STYLE method="get" e FORMMETHODGET e 
-FORM_STYLE_ID method="get" e FORMMETHODGET e 
-FORM_STYLE_CLASS method="get" e FORMMETHODGET e 
-FORM_STYLE_ID_CLASS method="get" e FORMMETHODGET e 
-FORM_STYLE_CLASS_ID method="get" e FORMMETHODGET e 
-
 FORMACTION /form form XFORM e
+FORM method="post" form FORMMETHODPOST eform
 FORMMETHODPOST /form form XFORM e
+FORM method="get" form FORMMETHODGET eform
 FORMMETHODGET /form form XFORM e
 XFORM /body body XBODY e
-
-
 BODY input body INPUT inputbody
-
-INPUT id= input INPUT_ID einput
-INPUT_ID /input e XINPUT e
-INPUT_ID class= e INPUT_ID_CLASS einput
-INPUT_ID_CLASS /input e XINPUT e
-INPUT_ID style= e INPUT_ID_STYLE einput
-INPUT_ID_STYLE /input e XINPUT e
-INPUT_ID_CLASS style= e INPUT_ID_CLASS_STYLE einput
-INPUT_ID_CLASS_STYLE /input e XINPUT e
-INPUT_ID_STYLE class= e INPUT_ID_STYLE_CLASS einput
-INPUT_ID_STYLE_CLASS /input e XINPUT e
-
-INPUT class= input INPUT_CLASS einput
-INPUT_CLASS /input e XINPUT e 
-INPUT_CLASS id= e INPUT_CLASS_ID einput
-INPUT_CLASS_ID /input e XINPUT e
-INPUT_CLASS style= e INPUT_CLASS_STYLE einput
-INPUT_CLASS_STYLE /input e XINPUT e
-INPUT_CLASS_ID style= e INPUT_CLASS_ID_STYLE einput
-INPUT_CLASS_ID_STYLE /input e XINPUT e
-INPUT_CLASS_STYLE id= e INPUT_CLASS_STYLE_ID einput
-INPUT_CLASS_STYLE_ID /input e XINPUT e
-
-INPUT style= input INPUT_STYLE einput
-INPUT_STYLE /input e XINPUT e
-INPUT_STYLE id= e INPUT_STYLE_ID einput
-INPUT_STYLE_ID /input e XINPUT e
-INPUT_STYLE class= e INPUT_STYLE_CLASS einput
-INPUT_STYLE_CLASS /input e XINPUT e
-INPUT_STYLE_ID class= e INPUT_STYLE_ID_CLASS einput
-INPUT_STYLE_ID_CLASS /input e XINPUT e
-INPUT_STYLE_CLASS id= e INPUT_STYLE_CLASS_ID einput
-INPUT_STYLE_CLASS_ID /input e XINPUT e
-
+INPUT id= input INPUT einput
+INPUT class= input INPUT einput
+INPUT style= input INPUT einput
 INPUT type="text" input INPUTTYPETEXT einput
-
-INPUT_ID type="text" e INPUTTYPETEXT e
-INPUT_ID_CLASS type="text" e INPUTTYPETEXT e
-INPUT_ID_STYLE type="text" e INPUTTYPETEXT e
-INPUT_ID_CLASS_STYLE type="text" e INPUTTYPETEXT e
-INPUT_ID_STYLE_CLASS type="text" e INPUTTYPETEXT e
-
-INPUT type="password" input INPUTTYPEPASSWORD einput
-
-INPUT_ID type="password" input INPUTTYPEPASSWORD e
-INPUT_ID_CLASS type="password" input INPUTTYPEPASSWORD e
-INPUT_ID_STYLE type="password" input INPUTTYPEPASSWORD e
-INPUT_ID_CLASS_STYLE type="password" input INPUTTYPEPASSWORD e
-INPUT_ID_STYLE_CLASS type="password" input INPUTTYPEPASSWORD e
-
-INPUT type="email" input INPUTTYPEEMAIL einput
-
-INPUT_ID type="email" input INPUTTYPEEMAIL e
-INPUT_ID_CLASS type="email" input INPUTTYPEEMAIL e
-INPUT_ID_STYLE type="email" input INPUTTYPEEMAIL e
-INPUT_ID_CLASS_STYLE type="email" input INPUTTYPEEMAIL e
-INPUT_ID_STYLE_CLASS type="email" input INPUTTYPEEMAIL e
-
-INPUT type="number" input INPUTTYPENUMBER einput
-
-INPUT_ID type="number" input INPUTTYPENUMBER e
-INPUT_ID_CLASS type="number" input INPUTTYPENUMBER e
-INPUT_ID_STYLE type="number" input INPUTTYPENUMBER e
-INPUT_ID_CLASS_STYLE type="number" input INPUTTYPENUMBER e
-INPUT_ID_STYLE_CLASS type="number" input INPUTTYPENUMBER e
-
-INPUT type="checkbox" input INPUTTYPECHECKBOX einput
-
-INPUT_ID type="checkbox" input INPUTTYPECHECKBOX e
-INPUT_ID_CLASS type="checkbox" input INPUTTYPECHECKBOX e
-INPUT_ID_STYLE type="checkbox" input INPUTTYPECHECKBOX e
-INPUT_ID_CLASS_STYLE type="checkbox" input INPUTTYPECHECKBOX e
-INPUT_ID_STYLE_CLASS type="checkbox" input INPUTTYPECHECKBOX e
-
 INPUTTYPETEXT /input input XINPUT e
+INPUT type="password" input INPUTTYPEPASSWORD einput
 INPUTTYPEPASSWORD /input input XINPUT e
+INPUT type="email" input INPUTTYPEEMAIL einput
 INPUTTYPEEMAIL /input input XINPUT e
+INPUT type="number" input INPUTTYPENUMBER einput
 INPUTTYPENUMBER /input input XINPUT e
+INPUT type="checkbox" input INPUTTYPECHECKBOX einput
 INPUTTYPECHECKBOX /input input XINPUT e
 XINPUT /body body XBODY e
-
-
 BODY table body TABLE tablebody
 TABLE /table table XTABLE e
-
-TABLE id= table TABLE_ID etable
-TABLE_ID /table e XTABLE e
-TABLE_ID class= e TABLE_ID_CLASS etable
-TABLE_ID_CLASS /table e XTABLE e
-TABLE_ID style= e TABLE_ID_STYLE etable
-TABLE_ID_STYLE /table e XTABLE e
-TABLE_ID_CLASS style= e TABLE_ID_CLASS_STYLE etable
-TABLE_ID_CLASS_STYLE /table e XTABLE e
-TABLE_ID_STYLE class= e TABLE_ID_STYLE_CLASS etable
-TABLE_ID_STYLE_CLASS /table e XTABLE e
-
-TABLE class= table TABLE_CLASS etable
-TABLE_CLASS /table e XTABLE e 
-TABLE_CLASS id= e TABLE_CLASS_ID etable
-TABLE_CLASS_ID /table e XTABLE e
-TABLE_CLASS style= e TABLE_CLASS_STYLE etable
-TABLE_CLASS_STYLE /table e XTABLE e
-TABLE_CLASS_ID style= e TABLE_CLASS_ID_STYLE etable
-TABLE_CLASS_ID_STYLE /table e XTABLE e
-TABLE_CLASS_STYLE id= e TABLE_CLASS_STYLE_ID etable
-TABLE_CLASS_STYLE_ID /table e XTABLE e
-
-TABLE style= table TABLE_STYLE etable
-TABLE_STYLE /table e XTABLE e
-TABLE_STYLE id= e TABLE_STYLE_ID etable
-TABLE_STYLE_ID /table e XTABLE e
-TABLE_STYLE class= e TABLE_STYLE_CLASS etable
-TABLE_STYLE_CLASS /table e XTABLE e
-TABLE_STYLE_ID class= e TABLE_STYLE_ID_CLASS etable
-TABLE_STYLE_ID_CLASS /table e XTABLE e
-TABLE_STYLE_CLASS id= e TABLE_STYLE_CLASS_ID etable
-TABLE_STYLE_CLASS_ID /table e XTABLE e
-
+TABLE id= table TABLE etable
+TABLE class= table TABLE etable
+TABLE style= table TABLE etable
 TABLE tr table TR trtable
 TR /tr tr XTR e
-
-TABLE_ID tr e TR trtable
-TABLE_ID_CLASS tr e TR trtable
-TABLE_ID_STYLE tr e TR trtable
-TABLE_ID_CLASS_STYLE tr e TR trtable
-TABLE_ID_STYLE_CLASS tr e TR trtable
-
-TABLE_CLASS tr e TR trtable
-TABLE_CLASS_ID tr e TR trtable
-TABLE_CLASS_STYLE tr e TR trtable
-TABLE_CLASS_ID_STYLE tr e TR trtable
-TABLE_CLASS_STYLE_ID tr e TR trtable
-
-TABLE_STYLE tr e TR trtable
-TABLE_STYLE_ID tr e TR trtable
-TABLE_STYLE_CLASS tr e TR trtable
-TABLE_STYLE_ID_CLASS tr e TR trtable
-TABLE_STYLE_CLASS_ID tr e TR trtable
-
 TR td tr TD tdtr
 TR th tr TH thtr
 TD /td td XTD e

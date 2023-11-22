@@ -10,7 +10,7 @@ productions = {}
 
 # all states or non-terminals (not really necessary)
 states = []
-
+ 
 # list of alphabet symbols or terminals (not really necessary)
 symbols = []
 

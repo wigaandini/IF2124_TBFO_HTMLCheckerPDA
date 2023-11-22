@@ -1,0 +1,242 @@
+<html id= id= ...>
+dianggap valid, jadi tiap ada id, class, atau 
+style dia dianggap tetap di state HTML aja, gausah pindah.
+
+STATE INPUT STACK-BOTTOM NEXT-STATE STACK-NOW
+
+START html Z0 HTML htmlZ0
+
+HTML id= html HTML ehtml
+HTML class= html HTML ehtml
+HTML style= html HTML ehtml
+
+HTML head html HEAD headhtml
+XBODY /html html FINAL e
+
+HEAD id= head HEAD ehead
+HEAD class= head HEAD ehead
+HEAD style= head HEAD ehead
+
+HEAD title head TITLE titlehead
+TITLE /title title XTITLE e
+XTITLE /head head XHEAD e
+HEAD script head SCRIPT scripthead
+SCRIPT /script script XSCRIPT e
+XSCRIPT /head head XHEAD e
+SCRIPT src= script SRCSCRIPT escript
+
+XSCRIPT /head head XHEAD e
+HEAD link head LINK linkhead
+LINK rel= link RELLINK elink
+RELLINK href e HREFRELLINK e
+
+HEAD /head head XHEAD e
+XHEAD body html BODY bodyhtml
+XHEAD /html html FINAL e
+
+BODY id= body BODY ebody
+BODY class= body BODY ebody
+BODY style= body BODY ebody
+
+BODY /body body XBODY e
+
+BODY h1 body H1 h1body
+H1 /h1 h1 XH1 e
+
+H1 id= h1 H1 eh1
+H1 class= h1 H1 eh1
+H1 style= h1 H1 eh1
+
+BODY h2 body H2 h2body
+H2 /h2 h2 XH2 e
+
+H2 id= h2 H2 eh2
+H2 class= h2 H2 eh2
+H2 style= h2 H2 eh2
+
+BODY h3 body H3 h3body
+H3 /h3 h3 XH3 e
+
+H3 id= h3 H3 eh3
+H3 class= h3 H3 eh3
+H3 style= h3 H3 eh3
+
+BODY h4 body H4 h4body
+H4 /h4 h4 XH4 e
+
+H4 id= h4 H4 eh4
+H4 class= h4 H4 eh4
+H4 style= h4 H4 eh4
+
+BODY h5 body H5 h5body
+H5 /h5 h5 XH5 e
+
+H5 id= h5 H5 eh5
+H5 class= h5 H5 eh5
+H5 style= h5 H5 eh5
+
+BODY h6 body H6 h6body
+H6 /h6 h6 XH6 e
+
+H6 id= h6 H6 eh6
+H6 class= h6 H6 eh6
+H6 style= h6 H6 eh6
+
+BODY p body P pbody
+P /p p XP e
+
+P id= p P ep
+P class= p P ep
+P style= p P ep
+
+P b p BOLD bp
+BOLD /b b XBOLD e
+XBOLD /p p XP e
+
+P strong p STRONG strongp
+STRONG /strong strong XSTRONG e
+XSTRONG /p p XP e
+
+P em p ITALIC emp
+ITALIC /em em XITALIC e
+XITALIC /p p XP e
+
+P small p SMALL smallp
+SMALL /small SMALL XSMALL e
+XSMALL /p p XP e
+
+P br p BREAK brp
+BREAK /br br XBREAK e
+
+BOLD br b BREAK brb
+BOLD em b ITALIC emb
+BOLD strong b STRONG strongb
+BOLD small b SMALL smallb
+
+BODY abbr body ABBR abbrbody
+ABBR /abbr abbr XABBR e
+XABBR /body body XBODY e
+
+ITALIC br em BREAK brem
+ITALIC b em BOLD bem
+ITALIC strong em STRONG strongem
+ITALIC small em SMALL smallem
+
+STRONG br strong BREAK brstrong
+STRONG b strong BOLD bstrong
+STRONG em strong ITALIC emstrong
+STRONG small strong SMALL smallstrong
+
+SMALL br small BREAK brsmall
+SMALL b small BOLD bsmall
+SMALL em small ITALIC emsmall
+SMALL strong small STRONG strongsmall
+
+BODY hr body BODY body 
+H1 hr h1 H1 h1
+H2 hr h2 H2 h2
+H3 hr h3 H3 h3
+H4 hr h4 H4 h4
+H5 hr h5 H5 h5
+H6 hr h6 H6 h6
+XH1 hr e XH1 e
+XH2 hr e XH2 e
+XH3 hr e XH3 e
+XH4 hr e XH4 e
+XH5 hr e XH5 e
+XH6 hr e XH6 e
+P hr p P p 
+XP hr e P e
+
+BODY div body DIV divbody
+DIV id= div DIV ediv
+DIV class= div DIV ediv
+DIV style= div DIV ediv
+DIV /div div XDIV e
+
+DIV p div P divp
+DIV h1 div H1 divh1
+DIV h2 div H2 divh2
+DIV h3 div H3 divh3
+DIV h4 div H4 divh4
+DIV h5 div H5 divh5
+DIV h6 div H6 divh6
+DIV hr div HR divhr
+DIV abbr div ABBR divabbr
+DIV br div BREAK divbr
+DIV strong div STRONG divstrong
+DIV em div ITALIC divitalic
+DIV small div SMALL divsmall
+DIV b div BOLD divbold
+
+DIV div div DIV divdiv
+DIV /div div DIV div
+
+BODY img body IMG imgbody
+IMG src= img IMG eimg
+IMG /img img XIMG e
+XIMG /body body XBODY e
+
+HEAD link head LINK linkhead
+LINK rel= link LINK elink
+LINK href rel= LINK elink
+LINK /link link XLINK e
+XLINK /head head XHEAD e
+
+BODY a body A abody
+A href= a A a
+A /a a XA e
+XA /body body XBODY e
+
+BODY button body BUTTON buttonbody
+BUTTON id= button BUTTON ebutton
+BUTTON class= button BUTTON ebutton
+BUTTON style= button BUTTON ebutton
+BUTTON /button button XBUTTON e
+BUTTON type="submit" button BUTTONTYPESUBMIT ebutton
+BUTTONTYPESUBMIT /button button XBUTTON e
+BUTTON type="reset" button BUTTONTYPERESET ebutton
+BUTTONTYPERESET /button button XBUTTON e
+BUTTONTYPE /button button XBUTTON e
+XBUTTON /body body XBODY e
+
+BODY form body FORM formbody
+FORM id= form FORM eform
+FORM class= form FORM eform
+FORM style= form FORM eform
+FORM /form form XFORM e
+FORM action= form FORMACTION eform
+FORMACTION /form form XFORM e
+FORM method="post" form FORMMETHODPOST eform
+FORMMETHODPOST /form form XFORM e
+FORM method="get" form FORMMETHODGET eform
+FORMMETHODGET /form form XFORM e
+XFORM /body body XBODY e
+
+BODY input body INPUT inputbody
+INPUT id= input INPUT einput
+INPUT class= input INPUT einput
+INPUT style= input INPUT einput
+INPUT type="text" input INPUTTYPETEXT einput
+INPUTTYPETEXT /input input XINPUT e
+INPUT type="password" input INPUTTYPEPASSWORD einput
+INPUTTYPEPASSWORD /input input XINPUT e
+INPUT type="email" input INPUTTYPEEMAIL einput
+INPUTTYPEEMAIL /input input XINPUT e
+INPUT type="number" input INPUTTYPENUMBER einput
+INPUTTYPENUMBER /input input XINPUT e
+INPUT type="checkbox" input INPUTTYPECHECKBOX einput
+INPUTTYPECHECKBOX /input input XINPUT e
+XINPUT /body body XBODY e
+
+BODY table body TABLE tablebody
+TABLE /table table XTABLE e
+TABLE id= table TABLE etable
+TABLE class= table TABLE etable
+TABLE style= table TABLE etable
+TABLE tr table TR trtable
+TR /tr tr XTR e
+TR td tr TD tdtr
+TR th tr TH thtr
+TD /td td XTD e
+TH /th th XTH e

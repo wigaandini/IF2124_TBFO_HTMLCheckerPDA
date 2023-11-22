@@ -123,8 +123,6 @@ BODY_STYLE_CLASS_ID /body e XBODY e
 
 BODY /body body XBODY e
 
-// HANDLING HEADER
-
 BODY h1 body H1 h1body
 H1 /h1 h1 XH1 e
 
@@ -342,8 +340,6 @@ H6_STYLE_CLASS id= e H6_STYLE_CLASS_ID eh6
 H6_STYLE_CLASS_ID /h6 e XH6 e
 
 
-// HANDLING PARAGRAPH
-
 BODY p body P pbody
 P /p p XP e
 
@@ -490,22 +486,16 @@ P_STYLE_ID_CLASS br e BREAK br
 P_STYLE_CLASS_ID br e BREAK br
 
 
-// BOLD (IN PARAGRAPH)
-
 BOLD br b BREAK brb
 BOLD em b ITALIC emb
 BOLD strong b STRONG strongb
 BOLD small b SMALL smallb
 
 
-// ABBR
-
 BODY abbr body ABBR abbrbody
 ABBR /abbr abbr XABBR e
 XABBR /body body XBODY e
 
-
-// EM (IN PARAGRAPH)
 
 ITALIC br em BREAK brem
 ITALIC b em BOLD bem
@@ -513,15 +503,11 @@ ITALIC strong em STRONG strongem
 ITALIC small em SMALL smallem
 
 
-// STRONG (IN PARAGRAPH)
-
 STRONG br strong BREAK brstrong
 STRONG b strong BOLD bstrong
 STRONG em strong ITALIC emstrong
 STRONG small strong SMALL smallstrong
 
-
-// SMALL (IN PARAGRAPH)
 
 SMALL br small BREAK brsmall
 SMALL b small BOLD bsmall
@@ -529,7 +515,6 @@ SMALL em small ITALIC emsmall
 SMALL strong small STRONG strongsmall
 
 
-// HR 
 BODY hr body BODY body 
 H1 hr h1 H1 h1
 H2 hr h2 H2 h2
@@ -547,7 +532,6 @@ P hr p P p
 XP hr e P e
 
 
-// DIV
 BODY div body DIV divbody
 DIV id div DIV div
 DIV class div DIV div
@@ -569,19 +553,16 @@ DIV em div ITALIC divitalic
 DIV small div SMALL divsmall
 DIV b div BOLD divbold
 
-{kasus div nested}
 DIV div div DIV divdiv
 DIV /div div DIV div
 
 
-// IMG
 BODY img body IMG imgbody
 IMG src= img IMGSRC src=img
 IMGSRC /img img XIMG e
 XIMG /body body XBODY e
 
 
-// LINK
 HEAD link head LINK linkhead
 LINK rel= link LINK rel=link
 LINK href rel= LINK hrefrel=
@@ -589,14 +570,12 @@ LINK /link link XLINK e
 XLINK /head head XHEAD e
 
 
-// A
 BODY a body A abody
 A href= a AHREF href=a
 AHREF /a a XA e
 XA /body body XBODY e
 
 
-// BUTTON
 BODY button body BUTTON buttonbody
 BUTTON id button BUTTON button
 BUTTON class button BUTTON button
@@ -684,7 +663,6 @@ BUTTONTYPE /button button XBUTTON e
 XBUTTON /body body XBODY e
 
 
-// FORM
 BODY form body FORM formbody
 FORM /form form XFORM e
 
@@ -787,7 +765,6 @@ FORMMETHODGET /form form XFORM e
 XFORM /body body XBODY e
 
 
-// INPUT
 BODY input body INPUT inputbody
 
 INPUT id= input INPUT_ID einput
@@ -871,7 +848,6 @@ INPUTTYPECHECKBOX /input input XINPUT e
 XINPUT /body body XBODY e
 
 
-// TABLE
 BODY table body TABLE tablebody
 TABLE /table table XTABLE e
 
@@ -908,7 +884,6 @@ TABLE_STYLE_ID_CLASS /table e XTABLE e
 TABLE_STYLE_CLASS id= e TABLE_STYLE_CLASS_ID etable
 TABLE_STYLE_CLASS_ID /table e XTABLE e
 
-// TABLE ROW
 TABLE tr table TR trtable
 TR /tr tr XTR e
 
@@ -930,7 +905,6 @@ TABLE_STYLE_CLASS tr e TR trtable
 TABLE_STYLE_ID_CLASS tr e TR trtable
 TABLE_STYLE_CLASS_ID tr e TR trtable
 
-// TABLE DATA
 TR td tr TD tdtr
 TR th tr TH thtr
 TD /td td XTD e

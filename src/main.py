@@ -34,12 +34,12 @@ def tokenize_html_with_regex(html_content):
 ################## MAIN ##################
 if __name__ == "__main__":
     # baca file pda
-    file_path = "pda.txt"
+    file_path = "src/pda.txt"
     pda_matrix = read_txt_to_matrix(file_path)
     # print(pda_matrix[0])
 
     # baca file html
-    file_path = 'text.html'
+    file_path = 'src/text.html'
     with open(file_path, 'r', encoding='utf-8') as file:
         html_content = file.read()
 

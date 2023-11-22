@@ -1,10 +1,3 @@
-START FINAL HTML HEAD XHEAD TITLE XTITLE SCRIPT XSCRIPT BODY XBODY H1 XH1 H2 XH2 H3 XH3 H4 XH4 H5 XH5 H6 XH6 P XP BOLD XBOLD ITALIC XITALIC SMALL XSMALL BREAK XBREAK STRONG XSTRONG ABBR XABBR DIV XDIV IMG XIMG LINK XLINK A XA BUTTON XBUTTON BUTTONTYPERESET BUTTONTYPESUBMIT FORM XFORM FORMACTION FORMMETHODGET FORMMETHODPOST INPUT XINPUT INPUTTYPETEXT INPUTTYPEPASSWORD INPUTTYPENUMBER INPUTTYPEEMAIL INPUTTYPECHECKBOX TABLE XTABLE TR XTR TD XTD TH XTH
-html /html id= class= style= src= href rel= href= head /head title /title script /script link /link body /body h1 /h1 h2 /h2 h3 /h3 h4 /h4 h5 /h5 h6 /h6 p /P b /b strong /strong em /em small /small br /br abbr /abbr hr a /a button /button type="submit" type="reset" form /form action= method="post" method="get" input /input type="text" type="password" type="email" type="number" type="checkbox" table /table tr /tr td /td th /th
-C D E F G H I J K L M N O P Q R S T U V W X Y Z c d e f g
-START
-Z0
-FINAL
-FINAL
 START html Z0 HTML htmlZ0
 HTML id= html HTML ehtml
 HTML class= html HTML ehtml
@@ -20,10 +13,12 @@ XTITLE /head head XHEAD e
 HEAD script head SCRIPT scripthead
 SCRIPT /script script XSCRIPT e
 XSCRIPT /head head XHEAD e
-SCRIPT src= script SCRIPT escript
+SCRIPT src= script SRCSCRIPT escript
 XSCRIPT /head head XHEAD e
 HEAD link head LINK linkhead
-HEAD </head> <head> XHEAD e
+LINK rel= link RELLINK elink
+RELLINK href e HREFRELLINK e
+HEAD /head head XHEAD e
 XHEAD body html BODY bodyhtml
 XHEAD /html html FINAL e
 BODY id= body BODY ebody
@@ -75,7 +70,7 @@ P em p ITALIC emp
 ITALIC /em em XITALIC e
 XITALIC /p p XP e
 P small p SMALL smallp
-SMALL /small small XSMALL e
+SMALL /small SMALL XSMALL e
 XSMALL /p p XP e
 P br p BREAK brp
 BREAK /br br XBREAK e

@@ -60,7 +60,7 @@ if __name__ == "__main__":
     #         print(f'Tag: {closing_tag}, Attributes:')
 
     # udah pasti ga sama
-    if (len(opening_tags) != len(closing_tags)):
+    if (len(opening_tags) != len(closing_tags)): # blm tentu krn ada bbrp opening tag yg gaperlu closing tag
         print("Syntax Error")
     else:
         state = pda_matrix[0][0]

@@ -127,10 +127,7 @@ DIV small div SMALL divsmall
 DIV b div BOLD divbold
 DIV div div DIV divdiv
 DIV /div div DIV div
-BODY img body IMG imgbody
-IMG src= img IMG eimg
-IMG /img img XIMG e
-XIMG /body body XBODY e
+BODY img body BODY body
 HEAD link head LINK linkhead
 LINK rel= link LINK elink
 LINK href rel= LINK elink

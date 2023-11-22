@@ -1,226 +1,96 @@
-import os
+import re
 
-start_input = "" # input word to be found or not found
-found = 0 # stores found state
-accepted_config = [] # here we will post end configuration that was accepted
+def tokenize_html_with_regex(html_content):
+    # Define the regular expression pattern for HTML tags and attributes
+    tag_pattern = re.compile(r'<\s*([a-zA-Z0-9\-]+)\s*([^>]*)\s*>|<\/\s*([a-zA-Z0-9\-]+)\s*>')
 
+    # Find all matches of the pattern in the HTML content
+    matches = tag_pattern.findall(html_content)
 
-# production rules ("read input", "pop stack", "push stack", "next state")
-productions = {}
+    return matches
 
-# all states or non-terminals (not really necessary)
-states = []
- 
-# list of alphabet symbols or terminals (not really necessary)
-symbols = []
+def pda_acceptance(html_tags):
+    # PDA configuration
+    productions = {
+        'q0': [('html', '', 'S', 'q1')],
+        'q1': [('', 'S', '', 'q2')],
+        'q2': [('head', '', '', 'q3')],
+        'q3': [('title', '', '', 'q4')],
+        'q4': [('', '', '', 'q5')],
+        'q5': [('/title', '', '', 'q6')],
+        'q6': [('', '', '', 'q7')],
+        'q7': [('/head', '', '', 'q8')],
+        'q8': [('', '', '', 'q9')],
+        'q9': [('body', '', '', 'q10')],
+        'q10': [('', '', '', 'q11')],
+        'q11': [('p', '', '', 'q12')],
+        'q12': [('', '', '', 'q13')],
+        'q13': [('/p', '', '', 'q14')],
+        'q14': [('', '', '', 'q15')],
+        'q15': [('/body', '', '', 'q16')],
+        'q16': [('', '', '', 'q17')],
+        'q17': [('/html', '', '', 'q_accept')],
+        'q_accept': []
+    }
 
-# list of stack alphabet symbols (not really necessary)
-stack_symbols = []
+    start_symbol = 'q0'
+    start_stack = 'Z0'
+    acceptable_states = ['q_accept']
+    accept_with = 'E'  # Accept on empty stack
 
-# start state
-start_symbol = ""
+    # PDA variables
+    state = start_symbol
+    input_str = ''
+    stack = start_stack
 
-# start stack symbol
-stack_start = ""
+    for tag, attributes, closing_tag in html_tags:
+        # Print current configuration
+        print(f'State: {state}, Input: {input_str}, Stack: {stack}')
 
-# list of acceptable states
-acceptable_states = []
+        # Check if the current configuration is accepted
+        if state in acceptable_states and accept_with == 'E' and stack == '':
+            print('Input accepted!')
+            return
 
-# E - accept on empty stack or F - acceptable state (default is false)
-accept_with = ""
+        # Find applicable production rules
+        moves = get_moves(state, input_str, stack, productions)
+        if len(moves) == 0:
+            print('No valid moves!')
+            return
 
+        # Choose the first valid move
+        move = moves[0]
 
+        # Apply the move
+        state = move[0]
+        input_str = move[1]
+        stack = move[2]
 
-# rcursively generate all prossiblity tree and terminate on success
-def generate(state, input, stack, config):
-	global productions
-	global found
+    print('Input not accepted!')
 
-	total = 0
-
-	# check for other tree node sucess
-	if found:
-		return 0
-
-	# check if our node can terminate with success
-	if is_found(state, input, stack):
-		found = 1 # mark that word is accepted so other tree nodes know and terminate
-
-		# add successful configuration
-		accepted_config.extend(config)
-
-		return 1
-
-	# check if there are further moves (or we have to terminate)
-	moves = get_moves(state, input, stack, config)
-	if len(moves) == 0:
-		return 0
-
-	# for each move do a tree
-	for i in moves:
-		total = total + generate(i[0], i[1], i[2], config + [(i[0], i[1], i[2])])  
-
-	return total
-
-def get_moves(state, input, stack, config):
-    global productions
-
+def get_moves(state, input_str, stack, productions):
     moves = []
 
-    for i in productions:
-        if i != state:
-            continue
+    for production in productions.get(state, []):
+        new_state = production[3]
+        new_input = input_str[len(production[0]):]
+        new_stack = stack[:-len(production[1])] + production[2]
 
-        for j in productions[i]:
-            current = j
-            new = []
-
-            new.append(current[3])
-
-            # read symbol from input if we have one
-            if current[0] != "":
-                if input.startswith(current[0]):
-                    new.append(input[len(current[0]):])
-                else:
-                    continue
-            else:
-                new.append(input)
-
-            # read stack symbol
-            if current[1] != "":
-                if stack.startswith(current[1]):
-                    new.append(current[2] + stack[len(current[1]):])
-                else:
-                    continue
-            else:
-                new.append(current[2] + "")
-
-            moves.append(new)
+        moves.append((new_state, new_input, new_stack))
 
     return moves
 
-def generate(state, input, stack, config):
-    global productions
-    global found
+def main():
+    # Read HTML file
+    file_path = 'src/text.html'  # Replace with the path to your HTML file
+    with open(file_path, 'r', encoding='utf-8') as file:
+        html_content = file.read()
 
-    total = 0
+    # Tokenize HTML using regular expressions
+    html_tags = tokenize_html_with_regex(html_content)
 
-    if found:
-        return 0
+    # PDA Acceptance
+    pda_acceptance(html_tags)
 
-    if is_found(state, input, stack):
-        found = 1
-        accepted_config.extend(config)
-        return 1
-
-    moves = get_moves(state, input, stack, config)
-    if len(moves) == 0:
-        return 0
-
-    for i in moves:
-        total = total + generate(i[0], i[1], i[2], config + [(i[0], i[1], i[2])])
-
-    return total
-
-def is_found(state, input, stack):
-    global accept_with
-    global acceptable_states
-
-    if input == "":
-        return 0
-
-    if accept_with == "E":
-        if stack == "":
-            return 1
-        return 0
-    else:
-        for i in acceptable_states:
-            if i == state:
-                return 1
-        return 0
-
-# ... (rest of the code)
-
-# print list of corrent configuration
-def print_config(config):
-	for i in config:
-		print (i)
-
-
-def parse_file(filename):
-	global productions
-	global start_symbol
-	global start_stack
-	global acceptable_states
-	global accept_with
-
-	try:
-		lines = [line.rstrip() for line in open(filename)]
-
-	except:
-		return 0
-
-	# add start state
-	start_symbol = lines[3]
-
-	# add start stack symbol
-	start_stack = lines[4]
-
-	# list of acceptable states
-	acceptable_states.extend(lines[5].split())
-
-	# E - accept on empty stack or F - acceptable state (default is false)
-	accept_with = lines[6] 
-
-	# add rules
-	for i in range(7, len(lines)):
-		production = lines[i].split()
-
-		configuration = [(production[1], production[2], production[4], production[3])]
-
-		if not production[0] in productions.keys(): 
-			productions[production[0]] = []
-
-		configuration = [tuple(s if s != "e" else "" for s in tup) for tup in configuration]
-
-		productions[production[0]].extend(configuration)
-
-	print (productions)
-	print (start_symbol)
-	print (start_stack)
-	print (acceptable_states)
-	print (accept_with)
-
-	return 1
-
-
-# checks if symbol is terminal or non-terminal
-def done():
-	if found:
-		print ("Hurray! Input word \"" + start_input + "\" is part of grammar." )
-	else:
-		print ("Sorry! Input word \"" + start_input + "\" is not part of grammar.")
-
-
-
-# UI
-# here it should read automata in from file
-filename = input("Please enter your automata file:\n")
-while not parse_file(filename):
-	print ("File not found!")
-	filename = input("Please enter your automata file again:\n")
-print ("Automata built.")
-
-start_input = input("Please enter your word:\n")
-print ("Checking word \"" + start_input + "\" ...")
-
-while start_input != "end":
-	# magic starts here
-	if not generate(start_symbol, start_input, start_stack, [(start_symbol, start_input, start_stack)]):
-		done()
-	else:
-		print_config(accepted_config) # show list of configurations to acceptance
-		done()
-
-	start_input = input("Enter your next word (or end):\n")
-	print ("Checking word \"" + start_input + "\" ...")
+if __name__ == "__main__":
+    main()

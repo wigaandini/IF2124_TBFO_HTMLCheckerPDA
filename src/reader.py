@@ -1,88 +1,40 @@
-# # # # Open the HTML file in read mode
-# # # with open('text.html', 'r') as file:
-# # #     # Read the content of the file
-# # #     html_content = file.read()
-
-# # # # Now 'html_content' contains the content of the HTML file
-# # # print(html_content)
-
-# # # import re
-
-# # # txt = "The rain in Spain"
-# # # x = re.search("^The.*Spain$", txt)
-
-# # import urllib2
-# # from bs4 import BeautifulSoup
-
-# # # Fetch the html file
-# # response = urllib2.urlopen('http://tutorialspoint.com/python/python_overview.htm')
-# # html_doc = response.read()
-
-# # # Parse the html file
-# # soup = BeautifulSoup(html_doc, 'html.parser')
-
-# # # Format the parsed html file
-# # strhtm = soup.prettify()
-
-# # # Print the first few characters
-# # print (strhtm[:225])
-
-# import re
-# from pathlib import Path
-
-# def getPath(namaFile):
-#     path = Path().absolute()
-#     pathFile = str(path) + "\\src\\" + namaFile
-#     return pathFile
-
-# def tokenize_html_file(file_path):
-#     with open(file_path, 'r', encoding='utf-8') as file:
-#         html_content = file.read()
-
-#     # Updated pattern to handle spaces in tags, attribute names, and attribute values
-#     pattern = r'<\s*[^>]*>|<[^>]+\s+[^=\s]+(?:\s*=\s*"[^"]*")?[^>]*>|[^<]+'
-
-#     regex = re.compile(pattern)
-#     matches = regex.finditer(html_content)
-
-#     tokens = []
-
-#     for match in matches:
-#         tokens.append(match.group())
-
-#     return tokens
-
-# # Example usage:
-# name = input("Nama file : ")
-# html_file_path = getPath(name)
-# tokens = tokenize_html_file(html_file_path)
-
-# for token in tokens:
-#     print(token)
-
-
 import re
 
 def tokenize_html_with_regex(html_content):
-    # Define the regular expression pattern for HTML tags
-    tag_pattern = re.compile(r'<\s*([a-zA-Z0-9\-]+)\s*[^>]*>')
+    # Define the regular expression pattern for HTML tags and attributes
+    tag_pattern = re.compile(r'<\s*([a-zA-Z0-9\-]+)\s*([^>]*)>|<\/\s*([a-zA-Z0-9\-]+)\s*>')
 
     # Find all matches of the pattern in the HTML content
     matches = tag_pattern.findall(html_content)
 
-    return matches
+    # Filter out the content within quotes in attributes
+    filtered_matches = []
+    for opening_tag, attributes, closing_tag in matches:
+        if attributes:
+            # Remove content within quotes
+            attributes = re.sub(r'(["\'])(?:(?=(\\?))\2.)*?\1', '', attributes)
+        filtered_matches.append((opening_tag, attributes, closing_tag))
+
+    return filtered_matches
 
 def main():
     # Read HTML file
-    with open('src/text.html', 'r', encoding='utf-8') as file:
+    file_path = 'src/text.html'  # Replace with the path to your HTML file
+    with open(file_path, 'r', encoding='utf-8') as file:
         html_content = file.read()
 
     # Tokenize HTML using regular expressions
     html_tags = tokenize_html_with_regex(html_content)
 
-    # Print tags (you can modify this part based on your specific needs)
-    for tag in html_tags:
-        print(tag)
+    # Print tags and attributes
+    for opening_tag, attributes, closing_tag in html_tags:
+        if opening_tag:
+            print(f'Tag: {opening_tag}, Attributes: {attributes}')
+        else:
+            print(f'Tag: /{closing_tag}, Attributes:')
 
 if __name__ == "__main__":
     main()
+
+state = 'START'
+stack = 'Z0'

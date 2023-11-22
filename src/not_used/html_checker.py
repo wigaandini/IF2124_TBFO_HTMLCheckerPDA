@@ -57,20 +57,14 @@ def check_html(html_tags):
     return html_checker.is_empty()
 
 def main():
-    # Read HTML file
-    file_path = 'text.html'  # Replace with the path to your HTML file
+    file_path = 'text.html'
     with open(file_path, 'r', encoding='utf-8') as file:
         html_content = file.read()
-
-    # Tokenize HTML using regular expressions
     html_tags = tokenize_html_with_regex(html_content)
     print(html_content)
-
-    # Check HTML validity using PDA
     is_valid_html = check_html(html_tags)
     print(html_tags)
 
-    # Print result
     if is_valid_html:
         print("Accepted.")
     else:

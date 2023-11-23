@@ -15,22 +15,24 @@ def read_txt_to_matrix(file_path):
 
 ################## TOKENIZER ##################
 def tokenize_html_with_regex(html_content):
-    # regular expression pattern untuk HTML tags and attributes
+    # regular expression pattern for HTML tags and attributes
     tag_pattern = re.compile(r'<\s*([a-zA-Z0-9\-]+)\s*([^>]*)>|<\/\s*([a-zA-Z0-9\-]+)\s*>')
 
     matches = tag_pattern.findall(html_content)
     filtered_matches = []
     for opening_tag, attributes, closing_tag in matches:
-        if attributes:
-            # hilangin isi dari attributes, karena semua dianggap valid
-            # misal id= 'sesuatu', sesuatunya itu gaperlu diperhatiin jadi yang di keep cuman id= ''
-            attributes = re.sub(r'(["\'])(?:(?=(\\?))\2.)*?\1', '', attributes)
-        if closing_tag:
-            # Modify here to include the closing tag in the format '/closing_tag'
-            filtered_matches.append('/' + closing_tag)
-        # Append the opening tag, but only if it is not an empty string
+        # Append the opening tag after processing attributes, but only if it is not an empty string
         if opening_tag:
             filtered_matches.append(opening_tag)
+
+        if attributes:
+            # Remove content within quotes
+            attributes = re.sub(r'(["\'])(?:(?=(\\?))\2.)*?\1', '', attributes)
+            filtered_matches.append(attributes)
+
+        if closing_tag:
+            # Include the closing tag in the format '/closing_tag'
+            filtered_matches.append('/' + closing_tag)
 
     return filtered_matches
 
@@ -38,12 +40,12 @@ def tokenize_html_with_regex(html_content):
 ################## MAIN ##################
 if __name__ == "__main__":
     # baca file pda
-    file_path = "pda.txt"
+    file_path = "src/pda.txt"
     pda_matrix = read_txt_to_matrix(file_path)
     # print(pda_matrix[0])
 
     # baca file html
-    file_path = 'text.html'
+    file_path = 'src/text.html'
     with open(file_path, 'r', encoding='utf-8') as file:
         html_content = file.read()
 

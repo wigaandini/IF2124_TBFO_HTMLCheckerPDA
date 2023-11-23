@@ -126,7 +126,7 @@ LINK href rel= LINK elink
 LINK /link link XLINK e
 XLINK /head head XHEAD e
 BODY a body A abody
-A href= a A a
+A href= a A ea
 A /a a BODY e
 BODY button body BUTTON buttonbody
 BUTTON id= button BUTTON ebutton
@@ -140,7 +140,7 @@ BUTTONTYPERESET /button button XBUTTON e
 BUTTONTYPE /button button XBUTTON e
 XBUTTON /body body XBODY e
 BODY form body FORM formbody
-FORM id= form FORM eform
+FORM form FORM eform
 FORM class= form FORM eform
 FORM style= form FORM eform
 FORM /form form XFORM e

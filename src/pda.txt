@@ -8,8 +8,7 @@ HEAD id= head HEAD ehead
 HEAD class= head HEAD ehead
 HEAD style= head HEAD ehead
 HEAD title head TITLE titlehead
-TITLE /title title XTITLE e
-XTITLE /head head XHEAD e
+TITLE /title title HEAD e
 HEAD script head SCRIPT scripthead
 SCRIPT /script script XSCRIPT e
 XSCRIPT /head head XHEAD e
@@ -69,6 +68,7 @@ XITALIC /p p BODY e
 P small p SMALL smallp
 SMALL /small small P e
 P br p P brp
+BODY br body BODY brbody
 BREAK /br br XBREAK e
 BOLD br b BREAK brb
 BOLD em b ITALIC emb
@@ -127,8 +127,7 @@ LINK /link link XLINK e
 XLINK /head head XHEAD e
 BODY a body A abody
 A href= a A a
-A /a a XA e
-XA /body body XBODY e
+A /a a BODY e
 BODY button body BUTTON buttonbody
 BUTTON id= button BUTTON ebutton
 BUTTON class= button BUTTON ebutton

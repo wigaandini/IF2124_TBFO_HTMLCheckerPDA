@@ -3,7 +3,6 @@ HTML id= html HTML ehtml
 HTML class= html HTML ehtml
 HTML style= html HTML ehtml
 HTML head html HEAD headhtml
-HTML body html BODY bodyhtml
 XBODY /html html FINAL e
 HEAD id= head HEAD ehead
 HEAD class= head HEAD ehead
@@ -17,7 +16,7 @@ XSCRIPT /head head XHEAD e
 SCRIPT src= script SCRIPT escript
 XSCRIPT /head head XHEAD e
 HEAD link head LINK linkhead
-HEAD </head> <head> XHEAD e
+HEAD /head head XHEAD e
 XHEAD body html BODY bodyhtml
 XHEAD /html html FINAL e
 BODY id= body BODY ebody

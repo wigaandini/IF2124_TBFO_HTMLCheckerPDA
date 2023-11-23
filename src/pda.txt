@@ -68,9 +68,8 @@ P em p ITALIC emp
 ITALIC /em em XITALIC e
 XITALIC /p p BODY e
 P small p SMALL smallp
-SMALL /small small XSMALL e
-XSMALL /p p BODY e
-P br p BREAK brp
+SMALL /small small P e
+P br p P brp
 BREAK /br br XBREAK e
 BOLD br b BREAK brb
 BOLD em b ITALIC emb
@@ -98,12 +97,6 @@ H3 hr h3 H3 h3
 H4 hr h4 H4 h4
 H5 hr h5 H5 h5
 H6 hr h6 H6 h6
-XH1 hr e XH1 e
-XH2 hr e XH2 e
-XH3 hr e XH3 e
-XH4 hr e XH4 e
-XH5 hr e XH5 e
-XH6 hr e XH6 e
 P hr p P p 
 XP hr e P e
 BODY div body DIV divbody

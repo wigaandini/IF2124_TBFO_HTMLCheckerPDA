@@ -127,7 +127,13 @@ DIV small div SMALL divsmall
 DIV b div BOLD divbold
 DIV div div DIV divdiv
 DIV /div div DIV div
-BODY img body BODY body
+BODY img body BODY ebody
+BODY br body BODY ebody
+BODY hr body BODY ebody
+BODY link body BODY ebody
+BODY input body BODY ebody
+BODY !DOCTYPE body BODY ebody
+BODY !-- body BODY ebody
 HEAD link head LINK linkhead
 LINK rel= link LINK elink
 LINK href rel= LINK elink

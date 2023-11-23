@@ -49,8 +49,16 @@ if __name__ == "__main__":
     opening_tags = [opening_tag for opening_tag, _, _ in html_tags if opening_tag]
     closing_tags = [closing_tag for _, _, closing_tag in html_tags if closing_tag]
     # print(len(opening_tags))
+    # print(opening_tags)
+    # print(closing_tags)
+
+    # Exclude tags that don't require closing
+    tags_without_closing = {"br", "img", "hr", "input", "link", "!DOCTYPE", "!--"}
+    opening_tags = [tag for tag in opening_tags if tag not in tags_without_closing]
+    closing_tags = [tag for tag in closing_tags if tag not in tags_without_closing]
     print(opening_tags)
     print(closing_tags)
+    # print(tags_without_closing)
         
     # print tags and attributes
     # for opening_tag, attributes, closing_tag in html_tags:

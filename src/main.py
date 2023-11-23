@@ -56,11 +56,11 @@ if __name__ == "__main__":
         found = False
         for row in pda_matrix:
             if tag == row[1] and state == row[0]:
-                found_opening = True
+                found = True
                 state = row[3]
                 break
 
-        if not found_opening:
+        if not found:
             print(f"Error: Tag '{tag}' is not valid.")
             break
 

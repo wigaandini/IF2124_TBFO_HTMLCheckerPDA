@@ -15,23 +15,23 @@ def read_txt_to_matrix(file_path):
 
 ################## TOKENIZER ##################
 def tokenize_html_with_regex(html_content):
-    # regular expression pattern for HTML tags and attributes
+    # regular expression pattern
     tag_pattern = re.compile(r'<\s*([a-zA-Z0-9\-]+)\s*([^>]*)>|<\/\s*([a-zA-Z0-9\-]+)\s*>')
 
     matches = tag_pattern.findall(html_content)
     filtered_matches = []
     for opening_tag, attributes, closing_tag in matches:
-        # Append the opening tag after processing attributes, but only if it is not an empty string
+        # append opening tag setelah proses attributes, hanya kalo dia ga empty
         if opening_tag:
             filtered_matches.append(opening_tag)
 
         if attributes:
-            # Remove content within quotes
-            attributes = re.sub(r'(["\'])(?:(?=(\\?))\2.)*?\1', '', attributes)
-            filtered_matches.append(attributes)
+            # extract attribute dengan '='
+            attribute_names = re.findall(r'(\S+?=).*?(?=\s|$)', attributes)
+            filtered_matches.extend(attribute_names)
 
         if closing_tag:
-            # Include the closing tag in the format '/closing_tag'
+            # include closing tag
             filtered_matches.append('/' + closing_tag)
 
     return filtered_matches
@@ -40,12 +40,12 @@ def tokenize_html_with_regex(html_content):
 ################## MAIN ##################
 if __name__ == "__main__":
     # baca file pda
-    file_path = "src/pda.txt"
+    file_path = "pda.txt"
     pda_matrix = read_txt_to_matrix(file_path)
     # print(pda_matrix[0])
 
     # baca file html
-    file_path = 'src/text.html'
+    file_path = 'text.html'
     with open(file_path, 'r', encoding='utf-8') as file:
         html_content = file.read()
 

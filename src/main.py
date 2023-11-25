@@ -1,4 +1,10 @@
 import re
+from pathlib import Path
+
+def get_HTML_path(html_file_name):
+    path = Path().absolute()
+    pathFile = str(path) + "\\test\\" + html_file_name
+    return pathFile
 
 ################## READ PDA.TXT ##################
 def read_txt_to_matrix(file_path):
@@ -64,12 +70,17 @@ if __name__ == "__main__":
     print("Welcome to HTML Checker!")
 
     # baca file pda
-    pda_file_path = "pda.txt"
+    pda_file_path = "src/pda.txt"
     pda_matrix = read_txt_to_matrix(pda_file_path)
 
-    # baca file html
-    print("")
-    html_file_path = input("Enter the file name for HTML (.html): ")
+    # cek filenya exist/tidak
+    html_file_name = input("Enter the file name for HTML (.html): ")
+    html_file_path = get_HTML_path(html_file_name)
+    while not Path(html_file_path).exists():
+        print(f"\nError: File '{html_file_name}' does not exist in 'test' folder.")
+        html_file_name = input("Enter the file name for HTML (.html): ")
+        html_file_path = get_HTML_path(html_file_name)
+
     with open(html_file_path, 'r', encoding='utf-8') as file:
         html_content = file.read()
 

@@ -174,10 +174,10 @@ IMG border= body IMG ebody
 IMG alt= body IMG ebody
 IMG width= body IMG ebody
 IMG height= body IMG ebody
-IMG " body DQUOTEIMGBODY "body
-DQUOTEIMGBODY " " IMG body
-IMGATR ' body SQUOTEIMGBODY 'body
-SQUOTEIMGBODY ' ' IMG body
+IMG " body DQUOTEATR "body
+DQUOTEATR " " IMG body
+IMGATR ' body SQUOTEATR 'body
+SQUOTEATR ' ' IMG body
 HEAD link head LINK linkhead
 LINK rel= link LINK elink
 LINK href rel= LINK elink

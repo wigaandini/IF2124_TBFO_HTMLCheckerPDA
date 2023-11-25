@@ -85,9 +85,10 @@ if __name__ == "__main__":
         html_content = file.read()
 
     # tokenize html
+    filename = pda_file_path.split('/')[-1]
     html_tags = tokenize_html_with_regex(html_content)
     print("")
-    print("HTML tags found in " + html_file_name + ":")
+    print("HTML tags found in " + filename + ":")
     print(html_tags)
     print("")
 
@@ -98,6 +99,7 @@ if __name__ == "__main__":
             if tag == row[1] and state == row[0]:
                 found = True
                 state = row[3]
+                print("Current state:", state)
                 break
 
         if not found:

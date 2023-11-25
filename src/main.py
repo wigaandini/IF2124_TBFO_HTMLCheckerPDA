@@ -1,6 +1,7 @@
 import re
 from pathlib import Path
 
+################## READ .HMTL ##################
 def get_HTML_path(html_file_name):
     path = Path().absolute()
     pathFile = str(path) + "\\test\\" + html_file_name

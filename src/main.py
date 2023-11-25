@@ -88,6 +88,7 @@ if __name__ == "__main__":
             if tag == row[1] and state == row[0]:
                 found = True
                 state = row[3]
+                print("Current state:", state)
                 break
 
         if not found:

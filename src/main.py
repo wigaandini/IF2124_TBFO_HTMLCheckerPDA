@@ -15,8 +15,8 @@ def read_txt_to_matrix(file_path):
 
 ################## TOKENIZER ##################
 def tokenize_html_with_regex(html_content):
-    # regular expression pattern excluding comments
-    tag_pattern = re.compile(r'<\s*([a-zA-Z0-9\-]+)\s*([^>]*)>|<\/\s*([a-zA-Z0-9\-]+)\s*>|<!--(.*?)-->')
+    # regular expression pattern excluding comments (including multiline comments)
+    tag_pattern = re.compile(r'<\s*([a-zA-Z0-9\-]+)\s*([^>]*)>|<\/\s*([a-zA-Z0-9\-]+)\s*>|<!--(.*?)-->', re.DOTALL)
 
     matches = tag_pattern.findall(html_content)
     filtered_matches = []
@@ -40,7 +40,6 @@ def tokenize_html_with_regex(html_content):
         if closing_tag:
             filtered_matches.append('/' + closing_tag)
 
-        # Skip comments
         if comment_content:
             continue
 
@@ -61,19 +60,26 @@ if __name__ == "__main__":
     # print intro
     for line in ascii_art.split('\n'):
         print(line)
+    
+    print("Welcome to HTML Checker!")
 
-    # baca file pda                              
-    file_path = "pda.txt"
-    pda_matrix = read_txt_to_matrix(file_path)
+    # baca file pda
+    pda_file_path = "pda.txt"
+    pda_matrix = read_txt_to_matrix(pda_file_path)
 
     # baca file html
-    file_path = 'src/text.html'
-    with open(file_path, 'r', encoding='utf-8') as file:
+    print("")
+    html_file_path = input("Enter the file name for HTML (.html): ")
+    with open(html_file_path, 'r', encoding='utf-8') as file:
         html_content = file.read()
 
     # tokenize html
+    filename = pda_file_path.split('/')[-1]
     html_tags = tokenize_html_with_regex(html_content)
+    print("")
+    print("HTML tags found in " + filename + ":")
     print(html_tags)
+    print("")
 
     state = pda_matrix[0][0]
     for tag in html_tags:
@@ -85,7 +91,7 @@ if __name__ == "__main__":
                 break
 
         if not found:
-            print(f"Error: Tag '{tag}' is not valid.")
+            print(f"Error: Tag '{tag}' is not valid because the previous tag isn't complete.")
             break
 
     print("Final state:", state)

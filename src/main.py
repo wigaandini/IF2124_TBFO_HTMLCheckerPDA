@@ -48,10 +48,6 @@ def tokenize_html_with_regex(html_content):
 
 ################## MAIN ##################
 if __name__ == "__main__":
-<<<<<<< HEAD
-    # baca file pda
-    file_path = "src/pda.txt"
-=======
 
     ascii_art = '''
     _  _    _____  __  __    _                ___    _  _     ___     ___    _  __    ___     ___   
@@ -68,7 +64,6 @@ if __name__ == "__main__":
 
     # baca file pda                              
     file_path = "pda.txt"
->>>>>>> 654eda8fbd9dbff3b2346917b687eab6db54649b
     pda_matrix = read_txt_to_matrix(file_path)
 
     # baca file html

@@ -21,14 +21,23 @@ def tokenize_html_with_regex(html_content):
     matches = tag_pattern.findall(html_content)
     filtered_matches = []
     for opening_tag, attributes, closing_tag in matches:
-        # append opening tag setelah proses attributes, hanya kalo dia ga empty
+        # append opening tag after processing attributes, only if it's not empty
         if opening_tag:
             filtered_matches.append(opening_tag)
 
         if attributes:
-            # extract attribute dengan '='
-            attribute_names = re.findall(r'(\S+?=).*?(?=\s|$)', attributes)
-            filtered_matches.extend(attribute_names)
+            # extract attribute with '=' and optional double quotes
+            attribute_names = re.findall(r'(\S+?=)(?:"(.*?)"|\'(.*?)\'|(.*?))(?=\s|$)', attributes)
+            for attr_name, double_quoted, single_quoted, unquoted in attribute_names:
+                filtered_matches.append(attr_name)
+                if double_quoted:
+                    filtered_matches.append('"')
+                    filtered_matches.append('"')
+                elif single_quoted:
+                    filtered_matches.append("'")
+                    filtered_matches.append("'")
+                elif unquoted:
+                    filtered_matches.append(unquoted)
 
         if closing_tag:
             # include closing tag
@@ -36,13 +45,11 @@ def tokenize_html_with_regex(html_content):
 
     return filtered_matches
 
-
 ################## MAIN ##################
 if __name__ == "__main__":
     # baca file pda
     file_path = "pda.txt"
     pda_matrix = read_txt_to_matrix(file_path)
-    # print(pda_matrix[0])
 
     # baca file html
     file_path = 'text.html'
@@ -68,9 +75,7 @@ if __name__ == "__main__":
 
     print("Final state:", state)
 
-    if (state == "FINAL"):
+    if state == "FINAL":
         print("Accepted.")
     else:
         print("Syntax Error.")
-
-        

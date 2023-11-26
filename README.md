@@ -4,7 +4,7 @@
 - Kayla Namira Mariadi	        13522050
 - Erdianti Wiga Putri Andini	13522053
 
-### How to use?
+### How to Use
 1. Masukkan file .html yang ingin kamu cek pada folder `test`.
 2. Buka terminal pada folder, `cd src`.
 3. Ketik 

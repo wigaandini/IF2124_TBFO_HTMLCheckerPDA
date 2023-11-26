@@ -220,7 +220,12 @@ DQUOTELINKHEADATR " " HEAD head
 LINKHEADATR ' head SQUOTELINKHEADATR 'head
 SQUOTELINKHEADATR ' ' HEAD head
 BODY a body A abody
-A href= a AATR ea
+A href= a A ea
+IMG src= a AATR ea
+IMG border= a AATR ea
+IMG alt= a AATR ea
+IMG width= a AATR ea
+IMG height= a AATR ea
 AATR " a DQUOTEA "a
 DQUOTEA " " A a
 AATR ' a SQUOTEA 'a

@@ -5,7 +5,6 @@ from pathlib import Path
 def get_HTML_path(html_file_name):
     path = Path().absolute()
     pathFile = str(path) + "/../test/" + html_file_name
-    print(pathFile)
     return pathFile
 
 ################## READ PDA.TXT ##################

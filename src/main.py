@@ -143,7 +143,7 @@ if __name__ == "__main__":
     add_input_types(html_tags, input_types)
     add_button_types(html_tags, button_types)
     print("")
-    print("HTML tags found in " + filename + ":")
+    print("HTML tags found in " + html_file_name + ":")
     print(html_tags)
     print("")
 

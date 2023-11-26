@@ -1,0 +1,60 @@
+<html>
+<head>
+   <title>Nested Table Example</title>
+</head>
+<body>
+
+  <h2>Nested Table Example</h2>
+
+  <table>
+    <tr>
+      <th>Main Table Header 1</th>
+      <th>Main Table Header 2</th>
+      <th>Main Table Header 3</th>
+    </tr>
+    <tr>
+      <td>Row 1, Cell 1</td>
+      <td>Row 1, Cell 2</td>
+      <td>
+        <!-- Nested Table -->
+        <table>
+          <tr>
+            <th>Nested Table Header 1</th>
+            <th>Nested Table Header 2</th>
+          </tr>
+          <tr>
+            <td>
+                <table>
+                    <tr>
+                      <th>Nested Table Header 1</th>
+                      <th>Nested Table Header 2</th>
+                    </tr>
+                    <tr>
+                      <td>Nested Row 1, Cell 1</td>
+                      <td>Nested Row 1, Cell 2</td>
+                    </tr>
+                    <tr>
+                      <td>Nested Row 2, Cell 1</td>
+                      <td>Nested Row 2, Cell 2</td>
+                    </tr>
+                  </table>
+            </td>
+            <td>Nested Row 1, Cell 2</td>
+          </tr>
+          <tr>
+            <td>Nested Row 2, Cell 1</td>
+            <td>Nested Row 2, Cell 2</td>
+          </tr>
+        </table>
+        <!-- End of Nested Table -->
+      </td>
+    </tr>
+    <tr>
+      <td>Row 2, Cell 1</td>
+      <td>Row 2, Cell 2</td>
+      <td>Row 2, Cell 3</td>
+    </tr>
+  </table>
+
+</body>
+</html>

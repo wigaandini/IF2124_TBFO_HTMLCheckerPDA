@@ -7,9 +7,6 @@
 ### How to use?
 1. Masukkan file .html yang ingin kamu cek pada folder test.
 2. Buka terminal pada folder, `cd src`.
-3. Ketik 
-        ```
-        python main.py
-        ```
+3. Ketik <code> python main.py </code>
 4. Masukkan nama file .html yang tadi.
 5. Klik `enter` atau `return` pada keyboard.

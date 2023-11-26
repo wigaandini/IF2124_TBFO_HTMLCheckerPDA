@@ -1,6 +1,6 @@
 # IF2124_TBFO_HTMLCheckerPDA
 ## Kelompok 8
-![Alt text](img//image.jpg)
+![Alt text](image.jpg)
 | **NIM** | **Nama Anggota** |
 |:---:|:---:|
 | 13522013 | Denise Felicia Tiowanni |

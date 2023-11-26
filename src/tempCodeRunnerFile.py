@@ -1,10 +1,9 @@
 import re
 from pathlib import Path
 
-################## READ .HMTL ##################
 def get_HTML_path(html_file_name):
     path = Path().absolute()
-    pathFile = str(path) + "\\test\\" + html_file_name
+    pathFile = str(path) + "/../test/" + html_file_name
     return pathFile
 
 ################## READ PDA.TXT ##################
@@ -52,7 +51,6 @@ def tokenize_html_with_regex(html_content):
 
     return filtered_matches
 
-
 ################## MAIN ##################
 if __name__ == "__main__":
 
@@ -72,12 +70,13 @@ if __name__ == "__main__":
     print("Welcome to HTML Checker!")
 
     # baca file pda
-    pda_file_path = "src/pda.txt"
+    pda_file_path = "pda.txt"
     pda_matrix = read_txt_to_matrix(pda_file_path)
 
     # cek filenya exist/tidak
     html_file_name = input("Enter the file name for HTML (.html): ")
     html_file_path = get_HTML_path(html_file_name)
+    
     while not Path(html_file_path).exists():
         print(f"\nError: File '{html_file_name}' does not exist in 'test' folder.")
         html_file_name = input("Enter the file name for HTML (.html): ")
@@ -87,19 +86,24 @@ if __name__ == "__main__":
         html_content = file.read()
 
     # tokenize html
+    filename = pda_file_path.split('/')[-1]
     html_tags = tokenize_html_with_regex(html_content)
     print("")
-    print("HTML tags found in " + html_file_name + ":")
+    print("HTML tags found in " + filename + ":")
     print(html_tags)
     print("")
 
     state = pda_matrix[0][0]
+    #stack_top = pda_matrix[0][2] 
     for tag in html_tags:
         found = False
         for row in pda_matrix:
             if tag == row[1] and state == row[0]:
+                #and stack_top == row[2]: #tambahan
                 found = True
                 state = row[3]
+                #stack_top = row[4] tambahan
+                print("Current state:", state)
                 break
 
         if not found:

@@ -4,7 +4,7 @@ from pathlib import Path
 ################## READ .HMTL ##################
 def get_HTML_path(html_file_name):
     path = Path().absolute()
-    pathFile = str(path) + "/test/" + html_file_name
+    pathFile = str(path) + "/../test/" + html_file_name
     print(pathFile)
     return pathFile
 
@@ -120,7 +120,7 @@ if __name__ == "__main__":
     print("Welcome to HTML Checker!")
 
     # baca file pda
-    pda_file_path = "src/pda.txt"
+    pda_file_path = "pda.txt"
     pda_matrix = read_txt_to_matrix(pda_file_path)
 
     # baca file html
@@ -144,7 +144,7 @@ if __name__ == "__main__":
     add_input_types(html_tags, input_types)
     add_button_types(html_tags, button_types)
     print("")
-    print("HTML tags found in " + html_file_name + ":")
+    print("HTML tags found in " + filename + ":")
     print(html_tags)
     print("")
 
@@ -156,6 +156,7 @@ if __name__ == "__main__":
                 print("Processing " + tag + "...")
                 found = True
                 state = row[3]
+                print("Current state:", state)
                 break
             
         if not found:
